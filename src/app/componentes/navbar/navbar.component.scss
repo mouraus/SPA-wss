@@ -1,0 +1,19 @@
+.navbar__customizada {
+    // border: 3px solid black;
+    display: flex;
+    // justify-content: space-between;
+}
+
+:host {
+   img{
+    margin-left: 70px;
+   }
+}
+
+@media only screen and (max-width: 1200px) {
+    :host {
+        img{
+         margin-left: 0;
+        }
+  }
+}
