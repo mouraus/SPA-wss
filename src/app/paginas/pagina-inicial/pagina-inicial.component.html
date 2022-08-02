@@ -2,17 +2,17 @@
 <app-carrosel></app-carrosel>
 
 
-<div class="container-fluid container__customizado">
-    <div class="item">
-        a
+<div class="container-fluid container__patrocinadores">
+    <div *ngFor="let patrocinador of patrocinadores" class="item">
+        <img src={{patrocinador}} alt="">
     </div>
-    <div class="item">
-        a
-    </div>
-    <div class="item">
-        a
-    </div>
-    <div class="item">
-        a
+</div>
+
+
+
+<div class="my-5 container-fluid categorias">
+    <div class="categoria" *ngFor="let categoria of categorias"
+        [ngStyle]="{'background':'linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(' + categoria.img + ')'}">
+        <h6>{{categoria.titulo | uppercase}}</h6>
     </div>
 </div>
