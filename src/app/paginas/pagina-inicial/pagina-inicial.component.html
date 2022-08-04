@@ -16,3 +16,20 @@
         <h6>{{categoria.titulo | uppercase}}</h6>
     </div>
 </div>
+
+<section class="text-center">
+    <h2>Produtos // AGL</h2>
+
+    <div class="container-fluid produtos__destaque my-5">
+        <div *ngFor="let produto of destaqueProdutos" class="produto">
+            <img src={{produto.img}} alt="produto">
+            <h3>{{produto.nome}}</h3>
+            <p>{{produto.descricao}}</p>
+        </div>
+    </div>
+    <button class="btn btn-outline-danger btn-lg px-5">Veja Mais</button>
+
+</section>
+
+
+<app-footer></app-footer>
