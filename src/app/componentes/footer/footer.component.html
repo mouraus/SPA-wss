@@ -1,0 +1,26 @@
+<footer class="container-fluid ">
+    <div class="logo">
+        <img src="../../../assets/logo-wss.svg" alt="logo">
+    </div>
+
+    <div class="produtos">
+        <h3>Produtos</h3>
+        <a href="#produto">Produto</a>
+        <a href="#produto">Produto</a>
+        <a href="#produto">Produto</a>
+        <a href="#produto">Produto</a>
+        <a href="#produto">Produto</a>
+
+    </div>
+
+    <div class="contato">
+        <h3>Contato</h3>
+        <p class="endereco">Rua Lorem ipsum, 31, Ipsum, Minas Gerais Brasil.</p>
+        <p class="telefone">(xx)xxxxx-xxxx</p>
+        <div class="redes__sociais">
+            <a *ngFor="let redeSocial of redesSociais" href="#redeSocial">
+                <img  src={{redeSocial.img}} alt="rede social">
+            </a>
+        </div>
+    </div>
+</footer>

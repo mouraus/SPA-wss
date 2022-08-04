@@ -23,6 +23,23 @@ export class PaginaInicialComponent implements OnInit {
       img: '../../../assets/categorias/interfone.png'
     },
   ];
+  public destaqueProdutos: Array<{ nome: string, descricao: string, img: string }> = [
+    {
+      nome: 'Fechadura',
+      descricao: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eum natus nostrum quis ipsam voluptatumprovident non cumque quibusdam, neque, laudantium molestias sint quaerat inventore aspernatur placeatdistinctio animi? Iure.',
+      img: '../../../assets/categorias/fechadura.png'
+    },
+    {
+      nome: 'Camera',
+      descricao: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eum natus nostrum quis ipsam voluptatumprovident non cumque quibusdam, neque, laudantium molestias sint quaerat inventore aspernatur placeatdistinctio animi? Iure.',
+      img: '../../../assets/categorias/camera.PNG'
+    },
+    {
+      nome: 'Sensor',
+      descricao: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eum natus nostrum quis ipsam voluptatumprovident non cumque quibusdam, neque, laudantium molestias sint quaerat inventore aspernatur placeatdistinctio animi? Iure.',
+      img: '../../../assets/categorias/sensor.png'
+    }
+  ]
 
   constructor() { }
 
