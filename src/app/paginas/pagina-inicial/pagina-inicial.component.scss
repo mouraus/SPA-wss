@@ -28,6 +28,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
+        // border: 3px solid black;
 
         .categoria {
             width: 49%;
@@ -40,17 +41,34 @@
             background-repeat: no-repeat !important;
             background-position: bottom !important;
             background-size: contain !important;
+            cursor: pointer;
+
+
 
             h6 {
                 font-family: 'Poppins';
                 font-style: normal;
                 font-weight: bold;
-                font-size: 40px;
+                font-size: 2em;
                 line-height: 60px;
                 letter-spacing: 8px;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: inherit;
+                transition: all ease 0.1s;
+            }
+
+            h6:hover {
+                background-color: rgb(255, 255, 255,0.10);
             }
         }
+
     }
+
+
 
     .produtos__destaque {
         display: flex;
@@ -80,3 +98,13 @@
 
 
 }
+
+@media only screen and (max-width: 768px) {
+    :host {
+        .categoria {
+            width: 98% !important;
+        }
+    }
+}
+
+
