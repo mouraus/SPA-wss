@@ -7,6 +7,7 @@ import { PaginaInicialComponent } from './paginas/pagina-inicial/pagina-inicial.
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { CarroselComponent } from './componentes/carrosel/carrosel.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { BotaoWhatsappComponent } from './componentes/botao-whatsapp/botao-whatsapp.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     NavbarComponent,
     CarroselComponent,
     FooterComponent,
+    BotaoWhatsappComponent,
   ],
   imports: [
     BrowserModule,
