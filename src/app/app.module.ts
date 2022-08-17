@@ -8,6 +8,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { CarroselComponent } from './componentes/carrosel/carrosel.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { BotaoWhatsappComponent } from './componentes/botao-whatsapp/botao-whatsapp.component';
+import { PaginaProdutoComponent } from './paginas/pagina-produto/pagina-produto.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BotaoWhatsappComponent } from './componentes/botao-whatsapp/botao-whats
     CarroselComponent,
     FooterComponent,
     BotaoWhatsappComponent,
+    PaginaProdutoComponent,
   ],
   imports: [
     BrowserModule,
