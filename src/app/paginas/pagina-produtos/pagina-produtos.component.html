@@ -1,0 +1,58 @@
+<div class="container-fluid container__customizado">
+  
+<div class="menu">
+    <ul>
+      <h3>Categorias</h3>
+        <li *ngFor="let categoria of categorias">
+        <input type="checkbox">  {{categoria}}
+        </li>
+    </ul>
+    <ul>
+      <h3>Fabricantes</h3>
+        <li *ngFor="let patrocinador of patrocinadores">
+        <input type="checkbox">  {{patrocinador}}
+        </li>
+    </ul>
+</div>
+
+<div class="area-dos-produtos">
+<form>
+    <input type="text" placeholder="Procure Aqui...">
+    <i><img src="../../../assets/icones/icons8-search.svg" alt="icone"></i>
+</form>
+
+<div class="card-area">
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+</div>
+
+<nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link">Previous</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link active" aria-current="page" href="#">1</a>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+    </li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+</div>
+
+
+
+
