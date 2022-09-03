@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalFiltroComponent } from './componentes/modal-filtro/modal-filtro.component';
 import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/menu-filtro-produtos.component';
 import { ContatoComponent } from './paginas/contato/contato.component';
+import { AdmModule } from './modules/adm/adm.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContatoComponent } from './paginas/contato/contato.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AdmModule
   ],
   providers: [],
   bootstrap: [AppComponent]
