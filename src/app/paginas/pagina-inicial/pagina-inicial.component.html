@@ -3,34 +3,33 @@
 <app-botao-whatsapp></app-botao-whatsapp>
 
 <div class="container-fluid patrocinadores my-4">
-    <div *ngFor="let patrocinador of patrocinadores" class="item">
-        <img src={{patrocinador}} alt="">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sint commodi, minus error rem odit
-            placeat sunt ipsum quod impedit a exercitationem! Odit doloribus beatae sed architecto delectus! Quisquam,
-            voluptatem.</p>
-    </div>
+  <div *ngFor="let patrocinador of patrocinadores" class="item">
+    <img src={{patrocinador}} alt="">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sint commodi, minus error rem odit
+      placeat sunt ipsum quod impedit a exercitationem! Odit doloribus beatae sed architecto delectus! Quisquam,
+      voluptatem.</p>
+  </div>
 </div>
 
 
 
 <div class="my-5 container-fluid categorias">
-    <div class="categoria" *ngFor="let categoria of categorias"
-        [ngStyle]="{'background':'linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(' + categoria.img + ')'}">
-        <h6>{{categoria.titulo | uppercase}}</h6>
-    </div>
+  <div class="categoria" *ngFor="let categoria of categorias"
+    [ngStyle]="{'background':'linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(' + categoria.img + ')'}">
+    <h6>{{categoria.titulo | uppercase}}</h6>
+  </div>
 </div>
 
 <section class="text-center">
-    <h2>Produtos // AGL</h2>
+  <h2>Produtos // AGL</h2>
 
-    <div class="container-fluid produtos__destaque my-5">
-        <div *ngFor="let produto of destaqueProdutos" class="produto">
-            <img src={{produto.img}} alt="produto">
-            <h3>{{produto.nome}}</h3>
-            <p>{{produto.descricao}}</p>
-        </div>
+  <div class="container-fluid produtos__destaque my-5">
+    <div *ngFor="let produto of destaqueProdutos" class="produto">
+      <img src={{produto.img}} alt="produto">
+      <h3>{{produto.nome}}</h3>
+      <p>{{produto.descricao}}</p>
     </div>
-    <a routerLink="/produtos"><button class="btn btn-outline-danger btn-lg px-5">Veja Mais</button></a>
-    
-</section>
+  </div>
+  <a routerLink="/produtos"><button class="btn btn-outline-danger btn-lg px-5">Veja Mais</button></a>
 
+</section>

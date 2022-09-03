@@ -1,0 +1,80 @@
+:host {
+    h1 {
+        width: 98%;
+        background: #DA1F26;
+        color: white;
+    }
+    form {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        ::placeholder {
+            padding: 5px;
+        }
+        .container-inputs {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            input {
+                min-width: 49.5%;
+            }
+        }
+    }
+    .container-mensagem {
+        width: 100%;
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            resize: none;
+        }
+    }
+    .card-contato {
+        width: 70%;
+        background: #DA1F26;
+        color: white;
+        .container-informacao {
+            gap: 25px;
+        }
+        h2 {
+            font-size: 36px;
+        }
+        .container-conteudo {
+            gap: 35px;
+            .wpp {
+                font: 500;
+                border-radius: 5px;
+                background-color: #25D366;
+                font-size: 18px;
+                gap: 5px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    :host {
+        form {
+            ::placeholder {
+                font-size: 26px;
+            }
+            .container-inputs {
+                gap: 15px;
+                input {
+                    height: 50px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .card-contato {
+        gap: 15px;
+        h6 {
+            font-size: 25px;
+        }
+        span {
+            font-size: 18px;
+        }
+    }
+}

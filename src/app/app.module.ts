@@ -14,6 +14,7 @@ import { CardComponent } from './componentes/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalFiltroComponent } from './componentes/modal-filtro/modal-filtro.component';
 import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/menu-filtro-produtos.component';
+import { ContatoComponent } from './paginas/contato/contato.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/
     CardComponent,
     ModalFiltroComponent,
     MenuFiltroProdutosComponent,
+    ContatoComponent,
   ],
   imports: [
     BrowserModule,
