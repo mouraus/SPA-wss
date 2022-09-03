@@ -1,0 +1,14 @@
+<div class="menu">
+    <ul>
+      <h3>Categorias</h3>
+        <li *ngFor="let c of categorias">
+        <input type="checkbox">  {{c.categoria}}
+        </li>
+    </ul>
+    <ul>
+      <h3>Fabricantes</h3>
+        <li *ngFor="let patrocinador of patrocinadores">
+        <input type="checkbox">  {{patrocinador}}
+        </li>
+    </ul>
+</div>
