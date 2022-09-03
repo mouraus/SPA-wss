@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginaIncialAdmComponent } from './paginas/pagina-incial-adm/pagina-incial-adm.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 
 
 @NgModule({
   declarations: [
-    PaginaIncialAdmComponent
+    LoginComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class AdmModule { }
+export class AdminModule { }

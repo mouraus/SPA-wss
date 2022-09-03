@@ -15,8 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalFiltroComponent } from './componentes/modal-filtro/modal-filtro.component';
 import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/menu-filtro-produtos.component';
 import { ContatoComponent } from './paginas/contato/contato.component';
-import { AdmModule } from './modules/adm/adm.module';
-
+import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +35,7 @@ import { AdmModule } from './modules/adm/adm.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AdmModule
+    AdminRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
