@@ -1,26 +1,20 @@
-<div class="container-fluid container__customizado">
-  
-<div class="menu">
-    <ul>
-      <h3>Categorias</h3>
-        <li *ngFor="let categoria of categorias">
-        <input type="checkbox">  {{categoria}}
-        </li>
-    </ul>
-    <ul>
-      <h3>Fabricantes</h3>
-        <li *ngFor="let patrocinador of patrocinadores">
-        <input type="checkbox">  {{patrocinador}}
-        </li>
-    </ul>
-</div>
+<app-navbar></app-navbar>
+<div class="container-fluid container__customizado"> 
+   <div class="filtro">
+  </div>
+<app-menu-filtro-produtos class="d-lg-block d-none"></app-menu-filtro-produtos>
 
 <div class="area-dos-produtos">
-<form>
-    <input type="text" placeholder="Procure Aqui...">
-    <i><img src="../../../assets/icones/icons8-search.svg" alt="icone"></i>
-</form>
 
+  <form class="d-lg-none d-flex" role="search">
+    <button type="button" class="btn btn-outline-primary d-lg-none d-block mx-3" data-bs-toggle="modal" data-bs-target="#modalFiltraProdutos">Filtro</button>
+    <div class="input-pesquisa d-flex">
+      <input class="form-control me-2" type="search" placeholder="Procure seu produto..." aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Procurar</button>
+    </div>
+
+  </form>
+<app-modal-filtro></app-modal-filtro>
 <div class="card-area">
     <app-card></app-card>
     <app-card></app-card>

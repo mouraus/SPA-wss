@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProdutosService } from 'src/app/servicos/produtos.service';
 
 @Component({
   selector: 'app-pagina-produtos',
@@ -7,23 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaProdutosComponent implements OnInit {
 
-  public categorias : Array<String> = [ 
-  'Alarmes',
-  'Automatizadores',
-  'CFTV',
-  'Fechaduras',
-  'Fonte',
-  'Informatica',
-  'Interfonia',
-  'Fabricantes'
-  ]
+  public categorias : Array<String> = []
 
-public patrocinadores: Array<String> = ['Megatron','Multilaser','FC', 'AGL']
+  public patrocinadores: Array<String> = ['Megatron','Multilaser','FC', 'AGL']
 
-
-  constructor() { }
+  public produtos: Object = []
+  
+  constructor(
+    private produtosService:ProdutosService
+  ) { }
 
   ngOnInit(): void {
+    this.produtosService.getProdutos().subscribe(
+      (data) => {
+        this.produtos = data
+        console.log(this.produtos)
+
+      },
+      (error) =>{
+        console.log(error)
+      }
+    )
   }
 
 }

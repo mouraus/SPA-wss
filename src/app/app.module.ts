@@ -11,6 +11,9 @@ import { BotaoWhatsappComponent } from './componentes/botao-whatsapp/botao-whats
 import { PaginaProdutoComponent } from './paginas/pagina-produto/pagina-produto.component';
 import { PaginaProdutosComponent } from './paginas/pagina-produtos/pagina-produtos.component';
 import { CardComponent } from './componentes/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ModalFiltroComponent } from './componentes/modal-filtro/modal-filtro.component';
+import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/menu-filtro-produtos.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,13 @@ import { CardComponent } from './componentes/card/card.component';
     PaginaProdutoComponent,
     PaginaProdutosComponent,
     CardComponent,
+    ModalFiltroComponent,
+    MenuFiltroProdutosComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

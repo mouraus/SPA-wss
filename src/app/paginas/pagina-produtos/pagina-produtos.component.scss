@@ -8,25 +8,6 @@
     }
 
 
-    .menu {
-        box-shadow: 0 0 1px 0px black;
-        border-radius: 5px;
-        width: 25%;
-        margin-top: 15px;
-        padding: 10px;
-
-        ul {
-            list-style: none;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 1px 0px black;
-            padding: 15px;
-
-            li {
-                font-size: 18px;
-            }
-        }
-    }
 
     .area-dos-produtos {
         width: 75%;
@@ -37,25 +18,22 @@
         justify-content: space-between;
 
         form {
-            border: 1.5px solid black;
-            width: 90%;
-            border-radius: 15px;
+            width: 100%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             padding: 5px;
             margin-top: 5px;
 
-            input {
-                width: 100%;
-                border: none;
-                outline: none;
+            .input-pesquisa {
+               width: 100%;
+                input {
+                    width: 100%;
+                }
+
             }
 
-            img {
-                cursor: pointer;
-                width: 35px;
-            }
+
         }
     }
 
@@ -72,4 +50,20 @@
     }
 
 
+}
+
+@media only screen and (max-width: 990px) {
+    :host {
+        .area-dos-produtos {
+            width: 90%;
+
+            form {
+                width: 100%;
+            }
+
+            .card-area {
+                width: 100%;
+            }
+        }
+    }
 }
