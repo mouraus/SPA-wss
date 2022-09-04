@@ -16,6 +16,7 @@ import { ModalFiltroComponent } from './componentes/modal-filtro/modal-filtro.co
 import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/menu-filtro-produtos.component';
 import { ContatoComponent } from './paginas/contato/contato.component';
 import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
+import { MenuLateralComponent } from './modules/admin/componentes/menu-lateral/menu-lateral.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
     ModalFiltroComponent,
     MenuFiltroProdutosComponent,
     ContatoComponent,
+    MenuLateralComponent,
   ],
   imports: [
     BrowserModule,
