@@ -40,11 +40,11 @@ export class LoginComponent implements OnInit {
     // )
     this.auth.login(email,senha).subscribe(
         (data) => {
-         this.router.navigate(['/admin/dashboard'])
+        if(data){
+        this.router.navigate(['/admin/dashboard'])
+        }
         },
         (error) =>{
-          // console.log(this.token);
-          // console.log(localStorage.getItem("jwt"));
           console.log(error)
         }
       )
