@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './paginas/login/login.component';
 import { PaginaInicialComponent } from './paginas/pagina-inicial/pagina-inicial.component';
 import { MenuLateralComponent } from './componentes/menu-lateral/menu-lateral.component';
+import { FormsModule, ReactiveFormsModule  }  from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { MenuLateralComponent } from './componentes/menu-lateral/menu-lateral.co
     MenuLateralComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,ReactiveFormsModule
   ]
 })
 export class AdminModule { }

@@ -16,6 +16,8 @@ import { ModalFiltroComponent } from './componentes/modal-filtro/modal-filtro.co
 import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/menu-filtro-produtos.component';
 import { ContatoComponent } from './paginas/contato/contato.component';
 import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
+import { FormsModule ,ReactiveFormsModule }  from '@angular/forms';
+import { AdminModule } from './modulos/admin/admin.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +31,17 @@ import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
     CardComponent,
     ModalFiltroComponent,
     MenuFiltroProdutosComponent,
-    ContatoComponent
+    ContatoComponent,
+  
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AdminRoutingModule
-  ],
+    AdminModule,
+    AdminRoutingModule,
+    FormsModule, ReactiveFormsModule
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

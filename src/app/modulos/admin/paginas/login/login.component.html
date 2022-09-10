@@ -3,14 +3,14 @@
     <img src="../../../../../assets/logo-wss.svg">
     <div class="mb-3 d-flex flex-column align-items-start">
       <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="email@email.com">
+      <input type="email" class="form-control"   placeholder="email@email.com" name="dados" [(ngModel)]="email">
     </div>
 
     <div class="mb-3 d-flex flex-column align-items-start">
-      <label for="senha" class="form-label">Senha</label>
-      <input type="password" class="form-control" id="senha" placeholder="Digite sua senha...">
+      <label for="senha" class="form-label" >Senha</label>
+      <input type="password" class="form-control" placeholder="Digite sua senha..." name="senha"  [(ngModel)]="senha">
     </div>
-    <button class="btn btn-primary w-100">Entrar</button>
+    <button class="btn btn-primary w-100" (click)="login(email,senha)">Entrar</button>
     <a href="/admin">Esqueceu sua senha?</a>
   </form>
 </div>
