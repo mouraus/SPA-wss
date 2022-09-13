@@ -10,7 +10,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ProdutosComponent } from './paginas/produtos/produtos.component';
 import { FormularioCadastroProdutosComponent } from './componentes/formulario-cadastro-produtos/formulario-cadastro-produtos.component';
 import { JwtInterceptor } from './helper/jwt_interceptor';
-import { ModalComponent } from './componentes/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { ModalComponent } from './componentes/modal/modal.component';
     NavBarComponent  ,
     ProdutosComponent,
     FormularioCadastroProdutosComponent,
-    ModalComponent
-  ],
+    ],
   imports: [
     CommonModule,
     FormsModule,ReactiveFormsModule,

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   public senha: string =""
 
   private BASE_URL :string = "https://wss-dev.herokuapp.com"
-  public usuario:any;
+  // public usuario:any;
   login(email:any,senha:any): void {
    console.log({email:email,senha:senha});
    
@@ -30,9 +30,9 @@ export class LoginComponent implements OnInit {
       )
   }
   ngOnInit(): void {
-    if(this.usuario !== ""){
-      this.router.navigate(['/admin/dashboard'])
-    } 
+    // if(this.usuario !== ""){
+    //   this.router.navigate(['/admin/dashboard'])
+    // } 
   }
 
 }
