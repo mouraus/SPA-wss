@@ -1,0 +1,50 @@
+<div class="container-fluid d-flex flex-column text-center">
+    <form class="cadastro my-5 d-flex flex-column text-center mx-auto">
+        <h2 class="mt-5">Cadastro de Produtos</h2>
+        <div class="item d-flex">
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Nome Do Produto</label>
+                <input  name="first" [(ngModel)]="nome_produto" type="text" placeholder="Nome Do Produto">    
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Categoria</label>
+                <input  name="first" [(ngModel)]="categoria" type="text" placeholder="Categoria">    
+            </div>
+        </div>
+        <div class="item d-flex flex-row">
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>SubCategoria</label>
+                <input  name="subcategoria" [(ngModel)]="subcategoria" type="text" placeholder="Subcategoria">
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Disponibilidade</label>
+                <input  name="disponibilidade" [(ngModel)]="disponibilidade" type="text" placeholder="Disponibilidade">    
+            </div>
+        </div>
+        <div class="item d-flex flex-row">
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Codigo do Produto</label>
+                <input  name="first" [(ngModel)]="codigo_produto" type="text" placeholder="Codigo do Produto">
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Destaque</label>
+                <input  name="destaque" [(ngModel)]="destaque" type="number" placeholder="Destaque">    
+            </div>
+        </div>
+        <div class="item d-flex flex-row">
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Nome Imagem</label>
+                <input  name="nome_imagem" [(ngModel)]="nome_imagem" type="text" placeholder="Nome Da Imagem">
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Marca</label>
+                <input  name="marca" [(ngModel)]="marca" type="text" placeholder="Nome Da Imagem">
+            </div>
+        </div>
+        <textarea name="descricao" [(ngModel)]="descricao" placeholder="Escreva Aqui"></textarea>
+        <button (click)="cadastrarProduto(nome_produto,destaque,categoria,subcategoria,disponibilidade,codigo_produto,marca,descricao,nome_imagem)" class="btn btn-primary w-50 mx-auto">Cadastrar Produto</button>
+    </form>
+
+</div>
+
+

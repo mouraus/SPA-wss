@@ -3,8 +3,6 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/c
 import { Observable } from 'rxjs';
 import { AuthService } from '../servicos/auth-service.service';
 
-// import { environment } from '../../environments/environment';
-
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
     constructor(private authenticationService: AuthService) { }
@@ -16,7 +14,7 @@ export class JwtInterceptor implements HttpInterceptor {
         if (estaLogado){
             request = request.clone({
                 setHeaders: {
-                    Authorization: `Bearer ${uruario.token}`
+                    Authorization: `${uruario.token}`
                 }
             });
         }
