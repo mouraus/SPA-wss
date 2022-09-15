@@ -15,31 +15,27 @@
 
   </form>
 <app-modal-filtro></app-modal-filtro>
-<div class="card-area">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+<div class="card-area" *ngIf="produtos" >
+  <div *ngFor="let produto of produtosDisplay; index as i" class="card w-30 py-3" style="width: 18rem;">
+    <img [src]="produto.urlimagem" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2>{{produto.nome_produto}}</h2>
+      <p class="card-text">{{produto.descricao}}</p>
+    </div>
+    <button class="btn btn-primary btn-danger w-50 mx-auto">Clique</button>
+  </div>
 </div>
 
 <nav aria-label="...">
     <ul class="pagination">
-      <li class="page-item disabled">
-        <a class="page-link">Previous</a>
+      <li class="page-item {{indiceSelecao === 0 ? 'disabled': ''}}">
+        <a class="page-link" (click)="voltarSelecao()">Previous</a>
       </li>
-      <li class="page-item">
-        <a class="page-link active" aria-current="page" href="#">1</a>
-    </li>
-      <li class="page-item">
-        <a class="page-link" href="#">2</a>
+      <li class="page-item" *ngFor="let pagina of produtosSelecao; index as i">
+        <a class="page-link {{indiceSelecao == i ? 'active' : ''}}" aria-current="page" (click)="selecionarSelecao(i)">{{i+1}}</a>
       </li>
-      <li class="page-item">
-        <a class="page-link" href="#">3</a>
-    </li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
+      <li class="page-item {{indiceSelecao + 1 === produtosSelecao.length ? 'disabled': ''}}">
+        <a class="page-link" (click)="proximaSelecao()">Next</a>
       </li>
     </ul>
   </nav>

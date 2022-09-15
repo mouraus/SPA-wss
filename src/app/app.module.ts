@@ -18,6 +18,8 @@ import { ContatoComponent } from './paginas/contato/contato.component';
 import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
 import { FormsModule ,ReactiveFormsModule }  from '@angular/forms';
 import { AdminModule } from './modulos/admin/admin.module';
+import {PaginatorModule} from 'primeng/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,9 @@ import { AdminModule } from './modulos/admin/admin.module';
     HttpClientModule,
     AdminModule,
     AdminRoutingModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, 
+    ReactiveFormsModule,
+    PaginatorModule
   ], 
   providers: [],
   bootstrap: [AppComponent]
