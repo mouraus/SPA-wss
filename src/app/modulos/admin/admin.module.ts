@@ -10,6 +10,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ProdutosComponent } from './paginas/produtos/produtos.component';
 import { FormularioCadastroProdutosComponent } from './componentes/formulario-cadastro-produtos/formulario-cadastro-produtos.component';
 import { JwtInterceptor } from './helper/jwt_interceptor';
+import { AtualizaProdutosComponent } from './paginas/atualiza-produtos/atualiza-produtos.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { JwtInterceptor } from './helper/jwt_interceptor';
     NavBarComponent  ,
     ProdutosComponent,
     FormularioCadastroProdutosComponent,
+    AtualizaProdutosComponent,
     ],
   imports: [
     CommonModule,

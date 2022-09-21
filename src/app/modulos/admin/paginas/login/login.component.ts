@@ -9,30 +9,37 @@ import { AuthService } from '../../servicos/auth-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http :HttpClient, private router: Router, private auth:AuthService) {}
-  public email:string=""
-  public senha: string =""
+  constructor(private http: HttpClient, private router: Router, private auth: AuthService) { }
+  public email: string = ""
+  public senha: string = ""
+  public erro: any = {mensagem:"", deuErro:false}
+  private BASE_URL: string = "https://wss-dev.herokuapp.com"
 
-  private BASE_URL :string = "https://wss-dev.herokuapp.com"
-  // public usuario:any;
-  login(email:any,senha:any): void {
-   console.log({email:email,senha:senha});
-   
-    this.auth.login(email,senha).subscribe(
-        (data) => {
-        if(data){
-        this.router.navigate(['/admin/dashboard'])
+  login(email: any, senha: any): void {
+    console.log({ email: email, senha: senha });
+
+    this.auth.login(email, senha).subscribe(
+      (data) => {
+        if (data) {
+          this.router.navigate(['/admin/dashboard'])
         }
-        },
-        (error) =>{
-          console.log(error)
+      },
+      (error) => {
+        
+        if (error.status == 400) {
+          this.erro.mensagem = error.error
+          this.erro.deuErro = true
+         console.log(error);
+         
+          setTimeout(() => {
+            this.erro.deuErro = false
+          }, 3000)
+
         }
-      )
+      }
+    )
   }
   ngOnInit(): void {
-    // if(this.usuario !== ""){
-    //   this.router.navigate(['/admin/dashboard'])
-    // } 
   }
 
 }

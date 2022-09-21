@@ -22,11 +22,12 @@ export class AuthService {
     login(email: string, senha: string) {
         return this.http.post<any>(`https://wss-dev.herokuapp.com/login`, { email, senha })
             .pipe(map(user => {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('jwt', JSON.stringify(user));
                 this.currentUserSubject.next(user);
+                console.log(user);   
                 return user;
             }));
+            
     }
 
     logout() {
