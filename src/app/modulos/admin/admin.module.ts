@@ -11,6 +11,7 @@ import { ProdutosComponent } from './paginas/produtos/produtos.component';
 import { FormularioCadastroProdutosComponent } from './componentes/formulario-cadastro-produtos/formulario-cadastro-produtos.component';
 import { JwtInterceptor } from './helper/jwt_interceptor';
 import { AtualizaProdutosComponent } from './paginas/atualiza-produtos/atualiza-produtos.component';
+import { PatrocinadoresComponent } from './paginas/patrocinadores/patrocinadores.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AtualizaProdutosComponent } from './paginas/atualiza-produtos/atualiza-
     ProdutosComponent,
     FormularioCadastroProdutosComponent,
     AtualizaProdutosComponent,
+    PatrocinadoresComponent,
     ],
   imports: [
     CommonModule,

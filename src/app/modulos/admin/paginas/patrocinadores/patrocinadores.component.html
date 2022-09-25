@@ -1,9 +1,9 @@
-<nav-bar></nav-bar>
+<!-- <nav-bar></nav-bar>
 
 <div class="modal fade" id="modalAtualizaProduto" tabindex="-1" aria-labelledby="modalAtualizaProdutoLabel"
     aria-hidden="true">
     <div class="modal-dialog">
-        <form #f="ngForm" class="modal-content">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalAtualizaProdutoLabel">Atualizar Produto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -12,23 +12,23 @@
                 <div class="d-flex flex-column atualizaProduto">
                     <div class="input d-flex align-items-start flex-column w-100">
                         <label>Nome do produto :</label>
-                        <input class="form-control" name="nome_produto"  value="{{produto.nome_produto}}" ngModel #nome_produto="ngModel" type="text">
+                        <input class="form-control" name="nome_produto" [(ngModel)]="nome_produto" value="{{produto?.nome_produto}}" type="text">
                     </div>
                     <div class="input d-flex align-items-start flex-column w-100">
                         <label>Codigo do produto :</label>
-                        <input class="form-control" name="codigo_produto" value="{{produto.codigo_produto}}" ngModel #codigo_produto="ngModel" type="text">
+                        <input class="form-control" name="codigo_produto" [(ngModel)]="codigo_produto" value="{{produto?.codigo_produto}}" type="text">
                     </div>
                     <div class="input d-flex align-items-start flex-column w-100">
                         <label>Marca :</label>
-                        <input class="form-control" name="marca" value="{{produto.marca}}" ngModel #marca="ngModel" type="text">
+                        <input class="form-control" name="marca" [(ngModel)]="marca" value={{produto?.marca}} type="text">
                     </div>
                     <div class="input d-flex align-items-start flex-column w-100">
                         <label>Destaque :</label>
-                        <input class="form-control" name="destaque" ngModel #destaque="ngModel" min="0" max="10" value="{{produto.destaque}}" type="number">
+                        <input class="form-control" name="destaque"  min="0" max="10" value="{{produto?.destaque}}" type="number">
                     </div>
                     <div class="input d-flex align-items-start flex-column w-100">
                         <label>Disponibilidade :</label>
-                        <select name="disponibilidade" ngModel #disponibilidade="ngModel" value="{{produto.disponibilidade}}" class="form-control w-100">
+                        <select name="disponibilidade" class="form-control w-100">
                             <option value="">Selecione</option>
                             <option value="true">Sim</option>
                             <option value="false">Não</option>
@@ -36,28 +36,28 @@
                     </div>
                     <div class="input d-flex flex-column">
                         <label>Categoria :</label>
-                        <select name="categoira" ngModel #categoria="ngModel" class="form-control">
-                            <option value="{{produto.nome_categoria}}">{{produto.nome_categoria}}</option>
+                        <select name="categoira" class="form-control">
+                            <option ></option>
                         </select>
                     </div>
                     <div class="input d-flex flex-column">
                         <label>SubCategoria :</label>
-                        <select name="subcategoria"  ngModel #subcategoria="ngModel" class="form-control">
-                            <option value="{{produto.nome_subcategoria}}">{{produto.nome_subcategoria}}</option>
+                        <select name="subcategoria" class="form-control">
+                            <option></option>
                         </select>
                     </div>
                     <div class="input d-flex flex-column w-100">
                         <label class="input">Descricao :</label>
-                        <textarea name="descricao" class="form-control" value="{{produto.descricao}}"  ngModel #descricao="ngModel"></textarea>
+                        <textarea name="descricao" class="form-control"></textarea>
                     </div>
 
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success" (click)="atualizarProduto(f,produto.id)">Atualizar</button>
+                <button type="button" class="btn btn-success" >Atualizar</button>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <div class="container-fluid mt-5">
@@ -68,26 +68,24 @@
             <a routerLink="/admin/adicionar-novo-produto" class="btn btn-primary align-items-start">+ Adicionar Novo
                 Produto</a>
         </div>
-        <div *ngIf="produtos.length == 0" class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             <div class="spinner-border m-5" role="status">
                 <span class="sr-only"></span>
             </div>
         </div>
 
-        <div *ngIf="produtos.length > 0" class="area d-flex flex-row flex-wrap">
-            <div *ngFor="let produto of produtos" class="card w-30 p-3 mt-3 d-flex flex-column justify-content-around" style="width: 18rem;">
-                <button (click)="deletarProduto(produto.id)" class="btn w-50 btn-danger btn-sm mb-3">Deletar
+        <div class="area d-flex flex-row flex-wrap">
+            <div class="card w-30 p-3 mt-3 d-flex flex-column justify-content-around" style="width: 18rem;">
+                <button class="btn w-50 btn-danger btn-sm mb-3">Deletar
                     Produto</button>
-                <img src={{produto.urlimagem}} class="card-img-top" alt="...">
+                <img class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h2>{{produto.nome_produto}}</h2>
-                    <p class="card-text scroll">{{produto.descricao}}</p>
                 </div>
 
-                <button  type="button" class="btn btn-primary" (click)="getProdutoPorId(produto.id)"
+                <button  type="button" class="btn btn-primary"
                     data-bs-toggle="modal" data-bs-target="#modalAtualizaProduto">
                     Atualizar Produto
                 </button>
             </div>
         </div>
-    </div>
+    </div> -->
