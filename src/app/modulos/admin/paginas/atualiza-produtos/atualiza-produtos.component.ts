@@ -47,10 +47,20 @@ export class AtualizaProdutosComponent implements OnInit {
     this.crudApi.atualizarProduto(formulario.value,id)
   }
 
+  private iniciaSelect(){
+    this.http.get(this.api.URL_CATEGORIA).subscribe((data: any) => {
+      this.categoriasSelect = data
+    })
+    this.http.get(this.api.URL_SUBCATEGORIA).subscribe((data: any) => {
+      this.subCategoriasSelect = data
+      console.log(this.subCategoriasSelect);
+      
+    })
+  }
   public getProdutoPorId(id: any) {
-    this.http.get<ProdutoAttModel>(`${this.api.URL_PRODUTOS}/` + id).subscribe(data => {
+    this.http.get<ProdutoAttModel>(`${this.api.URL_PRODUTOS}/detalhar/` + id).subscribe(data => {
       this.produto = data
-      console.log(this.produto);
+      this.iniciaSelect()
     })
   }
   ngOnInit(): void {
