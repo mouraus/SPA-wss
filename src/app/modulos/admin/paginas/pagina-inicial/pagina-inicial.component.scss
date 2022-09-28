@@ -1,0 +1,22 @@
+:host{
+    .container-fluid{
+        gap: 50px;
+    }
+    .item{
+        display: flex;
+        width: 350px;
+        height: 200px;
+        background-color: rgb(186, 186, 186);
+        padding: 15px;
+        border-radius: 5px;
+        color: white;
+        font-size: 26px;
+        cursor: pointer;
+        transition: all ease 0.3s; 
+    }
+    .item:hover{
+        transform: scale(1.1);
+
+    }
+    
+}

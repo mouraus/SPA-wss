@@ -1,0 +1,38 @@
+:host {
+    width: 25%;
+
+    .menu {
+        box-shadow: 0 0 1px 0px black;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+
+        ul {
+            background-color: white;
+            box-shadow: 0 0 1px 0px black;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 18px;
+        
+        }
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    :host{
+        width: 10%;
+        .menu{
+            box-shadow: none;
+            ul{
+                box-shadow: none;
+                font-size: 25px;
+                li{
+                    input{
+                        transform: scale(1.7);
+                    }
+                }
+            }
+        }
+    }
+  }

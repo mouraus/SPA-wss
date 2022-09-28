@@ -1,0 +1,6 @@
+<div class="menu">
+      <h3 *ngIf="categoriasLista">Categorias</h3>
+        <div *ngFor="let item of categoriasLista">
+        <input (change)="onFilterChange($event)" type="checkbox" id="{{item.id}}" [checked]="selecaoFiltroCategoria?.includes(item.id) ? true : '' " />  {{item.nome_categoria}}
+        </div>
+</div>

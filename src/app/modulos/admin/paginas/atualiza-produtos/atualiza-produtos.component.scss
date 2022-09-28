@@ -1,0 +1,38 @@
+:host {
+    .areaProdutos {
+        .area {
+            gap: 25px;
+        }
+
+        a {
+            color: white;
+        }
+
+        .spinner {
+            position: relative;
+            border: 3px solid black;
+        }
+
+    }
+
+    .atualizaProduto {
+        gap: 15px;
+
+        textarea {
+            resize: none;
+            min-height: 200px;
+        }
+
+    }
+    img{
+        width: 100%;
+        height: 55%;
+    };
+    .scroll {
+        max-height: 100px;
+        overflow-y: auto;
+    }
+    .input {
+        gap: 15px;
+    }
+}

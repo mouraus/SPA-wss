@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContatoComponent } from './paginas/contato/contato.component';
 import { PaginaInicialComponent } from './paginas/pagina-inicial/pagina-inicial.component';
 import { PaginaProdutoComponent } from './paginas/pagina-produto/pagina-produto.component';
 import { PaginaProdutosComponent } from './paginas/pagina-produtos/pagina-produtos.component';
@@ -8,7 +9,13 @@ const routes: Routes = [
   { path: '', component: PaginaInicialComponent },
   { path: 'produto', component: PaginaProdutoComponent },
   { path: 'produtos', component: PaginaProdutosComponent },
-  { path: '*', component: PaginaInicialComponent }
+  { path: 'contato', component: ContatoComponent },
+  { path: '*', component: PaginaInicialComponent },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

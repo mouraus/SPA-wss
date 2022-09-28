@@ -11,6 +11,14 @@ import { BotaoWhatsappComponent } from './componentes/botao-whatsapp/botao-whats
 import { PaginaProdutoComponent } from './paginas/pagina-produto/pagina-produto.component';
 import { PaginaProdutosComponent } from './paginas/pagina-produtos/pagina-produtos.component';
 import { CardComponent } from './componentes/card/card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ModalFiltroComponent } from './componentes/modal-filtro/modal-filtro.component';
+import { MenuFiltroProdutosComponent } from './componentes/menu-filtro-produtos/menu-filtro-produtos.component';
+import { ContatoComponent } from './paginas/contato/contato.component';
+import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
+import { FormsModule ,ReactiveFormsModule }  from '@angular/forms';
+import { AdminModule } from './modulos/admin/admin.module';
+import {PaginatorModule} from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -23,11 +31,21 @@ import { CardComponent } from './componentes/card/card.component';
     PaginaProdutoComponent,
     PaginaProdutosComponent,
     CardComponent,
-  ],
+    ModalFiltroComponent,
+    MenuFiltroProdutosComponent,
+    ContatoComponent,
+  
+    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    HttpClientModule,
+    AdminModule,
+    AdminRoutingModule,
+    PaginatorModule
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })
