@@ -13,32 +13,13 @@ export class LoginComponent implements OnInit {
   public email: string = ""
   public senha: string = ""
   public erro: any = {mensagem:"", deuErro:false}
-  private BASE_URL: string = "https://wss-dev.herokuapp.com"
 
   login(email: any, senha: any): void {
     console.log({ email: email, senha: senha });
-
-    this.auth.login(email, senha).subscribe(
-      (data) => {
-        if (data) {
-          this.router.navigate(['/admin/dashboard'])
-        }
-      },
-      (error) => {
-        
-        if (error.status == 400) {
-          this.erro.mensagem = error.error
-          this.erro.deuErro = true
-         console.log(error);
-         
-          setTimeout(() => {
-            this.erro.deuErro = false
-          }, 3000)
-
-        }
+    
+    this.auth.login(email, senha , this.erro)
       }
-    )
-  }
+    
   ngOnInit(): void {
   }
 

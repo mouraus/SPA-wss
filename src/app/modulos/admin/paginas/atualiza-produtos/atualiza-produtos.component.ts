@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UrlBaseApiService } from '../../servicos/url-base-api.service';
 import { CadastroProdutosService } from '../../servicos/cadastro-produtos.service';
-import { FormularioCadastroProdutos } from '../../interfaces/formulario-cadastro-produtos';
 import { ProdutoAttModel } from './produtoModel';
 
 @Component({
@@ -13,15 +12,6 @@ import { ProdutoAttModel } from './produtoModel';
 export class AtualizaProdutosComponent implements OnInit {
 
   public errorMensagem: any = { mensagem: "", deuErro: false }
-
-  // public nome_produto: string = ""
-  // public categoria: number = 0
-  // public subcategoria: number = 0
-  // public disponibilidade: boolean = false
-  // public codigo_produto: string = ""
-  // public marca: string = ""
-  // public descricao: string = ""
-  // public destaque?: any
 
 
   public imagem?: any
@@ -48,9 +38,6 @@ export class AtualizaProdutosComponent implements OnInit {
     destaque: 0
   };
 
-  public setFormulario(formulario: any) {
-
-  }
   public deletarProduto(id: any) {
     this.crudApi.deletarProduto(id, this.errorMensagem)
   }

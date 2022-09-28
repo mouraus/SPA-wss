@@ -111,9 +111,9 @@ export class CadastroProdutosService {
 
   public atualizarProduto(formulario: FormularioCadastroProdutos ,id:number) {
 
-    this.http.put(`${this.api.URL_PRODUTOS}/` + id, formulario, { headers: this.httpHeaders, observe: 'response' }).subscribe(data=>{
+    this.http.put(`${this.api.URL_PRODUTOS}/` + id, formulario, { headers: this.httpHeaders, observe: 'response' }).subscribe( data => {
       console.log(data);
-      window.location.reload();
+      // window.location.reload();
     })
   }
 }

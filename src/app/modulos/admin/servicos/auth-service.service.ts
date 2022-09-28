@@ -1,38 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 @Injectable({ providedIn: 'root' })
 
 export class AuthService {
-    private currentUserSubject: BehaviorSubject<any>;
-    public currentUser: Observable<any>;
     
     private jwt:any = localStorage.getItem('jwt');
-    constructor(private http: HttpClient) {
-        this.currentUserSubject = new BehaviorSubject(JSON.parse(this.jwt));
-        this.currentUser = this.currentUserSubject.asObservable();
-    }
+    constructor(private http: HttpClient, private router:Router) {}
 
-    public get currentUserValue(): any {
-        return this.currentUserSubject.value;
-    }
 
-    login(email: string, senha: string) {
-        return this.http.post<any>(`https://wss-dev.herokuapp.com/login`, { email, senha })
-            .pipe(map(user => {
-                localStorage.setItem('jwt', JSON.stringify(user));
-                this.currentUserSubject.next(user);
-                console.log(user);   
-                return user;
-            }));
-            
+    login(email: string, senha: string, erro:any) {
+        return this.http.post<any>(`https://wss-dev.herokuapp.com/login`, { email, senha }).subscribe(
+            (data) => {
+                console.log(data);
+                localStorage.setItem("jwt", JSON.stringify(data))
+                this.router.navigate(['/admin/dashboard'])
+
+            },
+            (error) => {
+            console.log(error);
+              if (error.status == 400 ) {
+                erro.mensagem = error.error
+                erro.deuErro = true
+                setTimeout(() => {
+                    erro.deuErro = false
+                }, 5000)
+    
+              }
+            }
+          )  
     }
 
     logout() {
-        // remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
-        this.currentUserSubject.next(null);
+        localStorage.removeItem('jwt');
+        this.router.navigate(['/admin/login'])
     }
 }
