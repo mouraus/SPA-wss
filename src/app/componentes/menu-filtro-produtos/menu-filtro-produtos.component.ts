@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProdutosService } from 'src/app/servicos/produtos.service';
+
 
 @Component({
   selector: 'app-menu-filtro-produtos',
@@ -7,21 +10,54 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuFiltroProdutosComponent implements OnInit {
 
-  public categorias : Array<{categoria:string}> = [
-    {categoria:'Alarmes'},
-    {categoria:'Automatizadores'},
-    {categoria:'CFTV'},
-    {categoria:'Fechaduras'},
-    {categoria:'Fontes'},
-    {categoria:'Informatica'},
-    {categoria:'Interfonia'}
-    ]
-  public patrocinadores: Array<String> = ['Megatron','Multilaser','FC', 'AGL']
+
+  public categoriasLista: any = []
+  public selecaoFiltroCategoria: number[] = [];
+  public filtrosSelecionados: number[]  = []
+
+  constructor(
+    private produtosService:ProdutosService,
+    private activatedRoute: ActivatedRoute,
+  ) {
+   }
 
 
-  constructor() { }
 
   ngOnInit(): void {
+    this.produtosService.getCategorias().subscribe(
+      (data: any) => {
+        this.categoriasLista = data
+      }
+    )
+    this.getFiltroUrl();
   }
 
+  setFiltros() {
+    this.produtosService.setFiltros(this.filtrosSelecionados)
+  }
+
+  onFilterChange(event: any){
+    if(event.target.checked){
+      this.filtrosSelecionados.push(event.target.id)
+      this.setFiltros() ;
+    }
+    else{
+      this.filtrosSelecionados.splice(this.filtrosSelecionados.indexOf(event.target.id), 1)
+      this.setFiltros() ;
+    }
+ }
+
+ getFiltroUrl(){
+  this.activatedRoute.queryParams.subscribe(params => {
+    this.selecaoFiltroCategoria = params['categorias']?.split(',');
+    if(params['categorias'] != undefined){
+      for(let i=0; i<this.selecaoFiltroCategoria.length; i++){
+        this.selecaoFiltroCategoria[i] = Number(this.selecaoFiltroCategoria[i])
+      }
+      this.filtrosSelecionados = this.selecaoFiltroCategoria
+    }
+  })
+  
+  
+ }
 }
