@@ -39,11 +39,11 @@ import {PaginatorModule} from 'primeng/paginator';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule,
     HttpClientModule,
     AdminModule,
     AdminRoutingModule,
-    FormsModule, 
-    ReactiveFormsModule,
     PaginatorModule
   ], 
   providers: [],

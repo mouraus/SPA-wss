@@ -1,14 +1,6 @@
 <div class="menu">
-    <ul>
-      <h3>Categorias</h3>
-        <li *ngFor="let c of categorias">
-        <input type="checkbox">  {{c.categoria}}
-        </li>
-    </ul>
-    <ul>
-      <h3>Fabricantes</h3>
-        <li *ngFor="let patrocinador of patrocinadores">
-        <input type="checkbox">  {{patrocinador}}
-        </li>
-    </ul>
+      <h3 *ngIf="categoriasLista">Categorias</h3>
+        <div *ngFor="let item of categoriasLista">
+        <input (change)="onFilterChange($event)" type="checkbox" id="{{item.id}}" [checked]="selecaoFiltroCategoria?.includes(item.id) ? true : '' " />  {{item.nome_categoria}}
+        </div>
 </div>
