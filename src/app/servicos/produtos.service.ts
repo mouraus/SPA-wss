@@ -32,4 +32,8 @@ export class ProdutosService {
     window.location.href = `/produtos?categorias=${inputFiltros}`;
    } 
   }
+
+  public getProdutoEspecifico(id: number){
+    return this.http.get<ProdutosModel>(`${this.BASE_URL}/produtos/detalhar/${id}`,{ headers: this.HTTP_HEADER_NO_AUTH })
+  }
 }

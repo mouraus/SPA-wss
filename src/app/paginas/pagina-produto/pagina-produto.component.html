@@ -1,31 +1,17 @@
 <app-navbar></app-navbar>
 <a routerLink=""><button class="btn btn-primary btn-danger">Voltar</button></a>
 <div class="container-fluid produto mt-5">
-    <div class="descricao">
-        <h2>Produto</h2>
-     <ul>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, expedita?</li>
-     </ul>
-     <button class="btn btn-primary btn-danger">Clique</button>
-    </div>
-    <div class="img__produto">
-        <img src="../../../assets/categorias/camera.PNG" alt="produto" class="img-fluid">
-    </div>
+	<div class="descricao">
+		<h2>{{produto?.nome_produto}}</h2>
+		<p>{{produto?.descricao}}</p>
+	</div>
+	<div class="img__produto">
+			<img [src]="produto?.urlimagem" alt="produto" class="img-fluid">
+	</div>
 </div>
+<a href="http://api.whatsapp.com/send?1=pt_BR&phone=5532985015459" target="_blank" class="w-25 mx-auto wpp d-flex flex-row align-items-center p-2 flex-nowrap">
+	<img src="../../../assets/icones/whatsapp.svg">
+	<span>Solicitar orçamento</span>
+</a>
 
 <app-footer></app-footer>

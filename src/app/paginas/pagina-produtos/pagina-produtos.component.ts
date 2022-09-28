@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProdutosService } from 'src/app/servicos/produtos.service';
 import { ProdutosModel } from './pagina-produtos.model';
 
@@ -21,6 +21,7 @@ export class PaginaProdutosComponent implements OnInit {
   constructor(
     private produtosService:ProdutosService,
     private activatedRoute: ActivatedRoute,
+    private router: Router
   ) 
   {
     this.activatedRoute.queryParams.subscribe(params => {
@@ -73,8 +74,8 @@ export class PaginaProdutosComponent implements OnInit {
     this.produtosDisplay = this.produtosSelecao[this.indiceSelecao];
   }
 
-  public linkPaginaProduto(produto?: any){
-    console.log(produto)
+  public linkPaginaProduto(produtoId: number){
+    this.router.navigateByUrl("produto?id=" + produtoId);
   }
 
 }
