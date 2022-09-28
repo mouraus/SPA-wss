@@ -7,11 +7,19 @@
         <div class="item d-flex">
             <div class="inputArea d-flex flex-column align-items-start">
                 <label>Nome Do Produto</label>
+<<<<<<< Updated upstream
                 <input name="nome_produto" [(ngModel)]="nome_produto" class="form-control" type="text"  required placeholder="Nome Do Produto">
             </div>
             <div class="inputArea d-flex flex-column align-items-start">
                 <label>Imagem</label>
                 <input (change)="fileChangeEvent($event)" class="form-control" name="urlimagem" type="file" required placeholder="Nome Da Imagem">
+=======
+                <input name="nome_produto" [(ngModel)]="nome_produto" type="text"  required placeholder="Nome Do Produto">
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Imagem</label>
+                <input (change)="fileChangeEvent($event)" name="urlimagem" type="file" required placeholder="Nome Da Imagem">
+>>>>>>> Stashed changes
             </div>
         </div>
         <div class="item d-flex flex-row">
@@ -23,7 +31,11 @@
                     </select>
                     <div class="d-flex flex-row">
                         <input name="nome_categoria" [(ngModel)]="novaCategoria" type="text "
+<<<<<<< Updated upstream
                             placeholder="Adicione uma nova categoria..." class="form-control"  required>
+=======
+                            placeholder="Adicione uma nova categoria..."  required>
+>>>>>>> Stashed changes
                         <button (click)="cadastrarCategoria(novaCategoria); iniciaSelect()" type="button"
                             class="btn btn-outline-primary d-block">Adicionar</button>
                     </div>
@@ -36,7 +48,11 @@
                         <option *ngFor="let s of subCategoriasSelect"  required value={{s.id}}>{{s.nome_subcategoria}}</option>
                     </select>
                     <div class="d-flex flex-row">
+<<<<<<< Updated upstream
                         <input class="form-control" [(ngModel)]="novaSubCategoria" name="nome_subcategoria"  required type="text"
+=======
+                        <input [(ngModel)]="novaSubCategoria" name="nome_subcategoria"  required type="text"
+>>>>>>> Stashed changes
                             placeholder="Adicione uma nova categoria...">
                         <button (click)="cadastrarSubCategoria(novaSubCategoria); iniciaSelect()" type="button"
                             class="btn btn-outline-primary d-block">Adicionar</button>
@@ -48,6 +64,7 @@
         <div class="item d-flex flex-row">
             <div class="inputArea d-flex flex-column align-items-start">
                 <label>Codigo do Produto</label>
+<<<<<<< Updated upstream
                 <input name="first" class="form-control" [(ngModel)]="codigo_produto" type="text"  required placeholder="Codigo do Produto">
             </div>
             <div class="inputArea d-flex flex-column align-items-start">
@@ -74,14 +91,49 @@
             <label>Descricao</label>
             <textarea class="form-control" name="descricao" [(ngModel)]="descricao" placeholder="Descricao do produto" ></textarea>
           </div>
+=======
+                <input name="first" [(ngModel)]="codigo_produto" type="text"  required placeholder="Codigo do Produto">
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Destaque</label>
+                <input name="destaque" [(ngModel)]="destaque" type="number"  required placeholder="Destaque">
+            </div>
+        </div>
+        <div class="item d-flex flex-row justify-content-between w-100">
+
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Disponibilidade</label>
+                <div class="d-flex">
+                    <label class="px-1">Sim:</label>
+                    <input name="disponibilidade" value="true" [(ngModel)]="disponibilidade" type="checkbox"
+                        placeholder="Disponibilidade" required>
+                </div>
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start">
+                <label>Marca</label>
+                <input name="marca" [(ngModel)]="marca" type="text" placeholder="Nome Da Imagem" required>
+            </div>
+        </div>
+        <div class="descricao d-flex flex-column align-items-start w-100">
+            <label>Descricao do produto!</label>
+            <textarea class="w-100" name="descricao" [(ngModel)]="descricao" placeholder="Escreva Aqui"  required></textarea>
+        </div>
+>>>>>>> Stashed changes
         <button
             (click)="cadastrarProduto(nome_produto,destaque,categoria,subcategoria,disponibilidade,codigo_produto,marca,descricao)"
             class="btn btn-primary w-50 mx-auto"
             >Cadastrar Produto</button>
+<<<<<<< Updated upstream
             <a routerLink="/admin/produtos" class="btn btn-warning align-items-start">Voltar</a>
         </form>
 
     
+=======
+    </form>
+    <ng-container *ngIf="errorMensagem.deuErro">
+        <h6 style="color:red">{{errorMensagem.algo}}</h6>
+    </ng-container>
+>>>>>>> Stashed changes
     <ng-container *ngIf="isImageSaved;">
         <img [src]="cardImageBase64" />
     </ng-container>
