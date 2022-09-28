@@ -36,14 +36,15 @@
                     </div>
                     <div class="input d-flex flex-column">
                         <label>Categoria :</label>
-                        <select name="categoira" ngModel #categoria="ngModel" class="form-control">
-                            <option value="{{produto.nome_categoria}}">{{produto.nome_categoria}}</option>
+                        <select name="categoira"  ngModel #categoria="ngModel" class="form-control">
+                            <option selected>{{produto.nome_categoria}}</option>
+                            <option *ngFor="let c of categoriasSelect" value="{{c.id}}">{{c.nome_categoria}}</option>
                         </select>
                     </div>
                     <div class="input d-flex flex-column">
                         <label>SubCategoria :</label>
                         <select name="subcategoria"  ngModel #subcategoria="ngModel" class="form-control">
-                            <option value="{{produto.nome_subcategoria}}">{{produto.nome_subcategoria}}</option>
+                            <option *ngFor="let s of subCategoriasSelect" value="{{s.id}}">{{s.nome_subcategoria}}</option>
                         </select>
                     </div>
                     <div class="input d-flex flex-column w-100">

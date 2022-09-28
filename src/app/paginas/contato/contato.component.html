@@ -1,14 +1,14 @@
 <app-navbar></app-navbar>
 <h1 class="text-center p-5 mx-auto my-3">Contato</h1>
 <div class="container-fluid text-center">
-  <form class="mx-auto">
+  <form #e="ngForm" class="mx-auto">
     <div class="container-inputs">
-      <input type="text" required placeholder="Nome">
-      <input type="email" required placeholder="Email">
+      <input type="text" name="nome" ngModel #nome="ngModel" required placeholder="Nome">
+      <input type="email" name="email" ngModel #email="ngModel" required placeholder="Email">
     </div>
     <div class="container-mensagem">
-      <textarea required placeholder="Digite Sua Mensagem Aqui..."></textarea>
-      <button class="btn btn-primary w-100">Enviar</button>
+      <textarea required name="mensagem" ngModel #mensagem="ngModel" placeholder="Digite Sua Mensagem Aqui..."></textarea>
+      <button (click)="enviarEmail(e)" class="btn btn-primary w-100">Enviar</button>
     </div>
   </form>
 
