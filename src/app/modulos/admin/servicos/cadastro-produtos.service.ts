@@ -95,25 +95,30 @@ export class CadastroProdutosService {
 
   public deletarProduto(id: number, errorMensagem: any) {
 
-    this.http.delete(`${this.api.URL_PRODUTOS}/` + id , { headers: this.httpHeaders, observe: 'response' }).subscribe(data => {
-        errorMensagem.mensagem = data.body
-        errorMensagem.deuErro = true
+    this.http.delete(`${this.api.URL_PRODUTOS}/` + id, { headers: this.httpHeaders, observe: 'response' }).subscribe(data => {
+      errorMensagem.mensagem = data.body
+      errorMensagem.deuErro = true
 
-        setTimeout(() => {
-          errorMensagem.deuErro = false
-        }, 5000)
-        window.location.reload();
+      setTimeout(() => {
+        errorMensagem.deuErro = false
+      }, 5000)
+      window.location.reload();
 
     })
 
 
   }
 
-  public atualizarProduto(formulario: FormularioCadastroProdutos ,id:number) {
+  public atualizarProduto(formulario: FormularioCadastroProdutos, id: number) {
 
-    this.http.put(`${this.api.URL_PRODUTOS}/` + id, formulario, { headers: this.httpHeaders, observe: 'response' }).subscribe( data => {
+    this.http.put(`${this.api.URL_PRODUTOS}/` + id, formulario, { headers: this.httpHeaders, observe: 'response' }).subscribe(data => {
       console.log(data);
-      // window.location.reload();
+      if (data.ok) {
+        this.http.get(`${this.api.URL_PRODUTOS}`).subscribe(data => {
+          window.location.reload();
+
+        })
+      }
     })
   }
 }

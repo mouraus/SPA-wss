@@ -33,7 +33,7 @@ export class AtualizaProdutosComponent implements OnInit {
     nome_subcategoria: 0,
     disponibilidade: false,
     codigo_produto: "",
-    marca: "",
+    id_marca: "",
     descricao: "",
     destaque: 0
   };
@@ -52,9 +52,7 @@ export class AtualizaProdutosComponent implements OnInit {
       this.categoriasSelect = data
     })
     this.http.get(this.api.URL_SUBCATEGORIA).subscribe((data: any) => {
-      this.subCategoriasSelect = data
-      console.log(this.subCategoriasSelect);
-      
+      this.subCategoriasSelect = data      
     })
   }
   public getProdutoPorId(id: any) {
@@ -66,7 +64,6 @@ export class AtualizaProdutosComponent implements OnInit {
   ngOnInit(): void {
     this.http.get(`${this.api.URL_PRODUTOS}`).subscribe(data => {
       this.produtos = data
-      console.log(this.produtos);
     })
 
   }

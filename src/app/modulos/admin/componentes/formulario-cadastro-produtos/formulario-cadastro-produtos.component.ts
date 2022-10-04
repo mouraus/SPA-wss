@@ -44,7 +44,7 @@ export class FormularioCadastroProdutosComponent implements OnInit {
         nome_produto : "",
         codigo_produto : "",
         descricao : "",
-        marca : "",
+        id_marca : "",
         destaque : 0,
         id_imagem : 0,
         id_categoria : 0,
@@ -59,7 +59,7 @@ export class FormularioCadastroProdutosComponent implements OnInit {
         formularioCadastroProdutos.disponibilidade = disponibilidade,
         formularioCadastroProdutos.codigo_produto = codigo_produto,
         formularioCadastroProdutos.descricao = descricao,
-        formularioCadastroProdutos.marca = marca,
+        formularioCadastroProdutos.id_marca = marca,
         formularioCadastroProdutos.destaque = destaque,
         formularioCadastroProdutos.id_imagem = id_imagem
         formularioCadastroProdutos.id_categoria = categoria,
