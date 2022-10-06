@@ -56,7 +56,6 @@ export class PaginaProdutosComponent implements OnInit {
     }
     this.produtosDisplay = this.produtosSelecao[this.indiceSelecao];
     this.produtosDisplay?.length != undefined ? this.paginaCarregada = 'carregada' : this.paginaCarregada = 'semProdutos';
-    //console.log(this.paginaCarregada,  this.produtosDisplay?.length)
   }
 
   public proximaSelecao(): void{

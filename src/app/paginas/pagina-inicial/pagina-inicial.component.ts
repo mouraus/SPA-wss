@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProdutosService } from 'src/app/servicos/produtos.service';
+import { ProdutosModel } from '../pagina-produtos/pagina-produtos.model';
 
 @Component({
   selector: 'app-pagina-inicial',
@@ -6,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagina-inicial.component.scss']
 })
 export class PaginaInicialComponent implements OnInit {
+
+  public destaqueProdutos: ProdutosModel[] = [];
+
 
   public patrocinadores: Array<string> = ['../../../assets/patrocinadores/fc-patrocinador.jpeg', '../../../assets/patrocinadores/giga_logo_header.png', '../../../assets/patrocinadores/logo_megatron.png', '../../../assets/patrocinadores/patrocinador-AGL-logo.webp']
   public categorias: Array<{ titulo: string, img: string }> = [
@@ -23,27 +29,25 @@ export class PaginaInicialComponent implements OnInit {
       img: '../../../assets/categorias/interfone.png'
     },
   ];
-  public destaqueProdutos: Array<{ nome: string, descricao: string, img: string }> = [
-    {
-      nome: 'Fechadura',
-      descricao: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eum natus nostrum quis ipsam voluptatumprovident non cumque quibusdam, neque, laudantium molestias sint quaerat inventore aspernatur placeatdistinctio animi? Iure.',
-      img: '../../../assets/categorias/fechadura.png'
-    },
-    {
-      nome: 'Camera',
-      descricao: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eum natus nostrum quis ipsam voluptatumprovident non cumque quibusdam, neque, laudantium molestias sint quaerat inventore aspernatur placeatdistinctio animi? Iure.',
-      img: '../../../assets/categorias/camera.PNG'
-    },
-    {
-      nome: 'Sensor',
-      descricao: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam eum natus nostrum quis ipsam voluptatumprovident non cumque quibusdam, neque, laudantium molestias sint quaerat inventore aspernatur placeatdistinctio animi? Iure.',
-      img: '../../../assets/categorias/sensor.png'
-    }
-  ]
+  
+  constructor(
+    private produtosService:ProdutosService,
+    private router: Router
 
-  constructor() { }
+  ) { }
 
   ngOnInit(): void {
+    this.produtosService.getProdutos().subscribe(
+      (data: ProdutosModel[]) => {
+        this.destaqueProdutos = data.slice(0, 8);
+      }
+    )
+
+    console.log(this.destaqueProdutos)
+  }
+
+  public linkPaginaProduto(produtoId: number){
+    this.router.navigateByUrl("produto?id=" + produtoId);
   }
 
 }

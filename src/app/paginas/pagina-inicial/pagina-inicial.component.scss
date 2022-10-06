@@ -76,29 +76,46 @@
 
 
 
-    .produtos__destaque {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+    
 
-        .produto {
-            width: 260px;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 40px;
+       
+            .card-area {
+                width: 90%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 25px;
+                justify-content: center;
+                margin: 40px auto;
+                
+                .card{
+                    height: 650px;
+                    box-shadow: 0px 5px 10px rgb(167, 167, 167);
+                }
+            
+                img {
+                    width: 100%;
+                }
 
-            img {
-                width: 100%;
-            }
+                h3 {
+                    color: #DA1F26;
+                    font-style: italic;
+                    font-size: medium;
+                    margin: 5px;
+                }
 
-            h3 {
-                color: #DA1F26;
-                font-style: italic;
-            }
+                p{
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-line-clamp: 6;
+                    -webkit-box-orient: vertical;
+                    text-align: justify;
+                    font-size: medium;
+                }
         }
-    }
+        
+    
 
 
 
