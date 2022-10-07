@@ -1,0 +1,32 @@
+.containerPatrocinadores{
+    padding: 50px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h1{
+        text-align: center;
+    }
+
+    .parceiro{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span{
+            width: 50%;
+            flex-grow: 1;
+        }
+        img{
+            width: 200px ;
+            padding-right: 10px;
+            margin: 0 0 0 auto;
+        }
+        
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .containerPatrocinadores{
+        padding: 50px 10px;
+    }
+}

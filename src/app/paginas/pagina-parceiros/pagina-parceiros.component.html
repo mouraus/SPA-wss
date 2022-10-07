@@ -1,0 +1,11 @@
+<app-navbar> </app-navbar>
+<app-botao-whatsapp></app-botao-whatsapp>
+<div class="container-fluid containerPatrocinadores">
+    <h1>Parceiros</h1>
+    <div class="parceiro" *ngFor="let empresa of parceiros">
+        <img src="{{empresa.img}}" alt="">
+        <span>{{empresa.descricao}}</span>
+    </div>
+
+</div>
+<app-footer></app-footer>
