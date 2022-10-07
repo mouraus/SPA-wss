@@ -19,6 +19,7 @@ import { AdminRoutingModule } from './modulos/admin/admin-routing.module';
 import { FormsModule ,ReactiveFormsModule }  from '@angular/forms';
 import { AdminModule } from './modulos/admin/admin.module';
 import {PaginatorModule} from 'primeng/paginator';
+import { PaginaParceirosComponent } from './paginas/pagina-parceiros/pagina-parceiros.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {PaginatorModule} from 'primeng/paginator';
     ModalFiltroComponent,
     MenuFiltroProdutosComponent,
     ContatoComponent,
+    PaginaParceirosComponent,
   
     ],
   imports: [

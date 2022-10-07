@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+  import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { ProdutosModel } from '../paginas/pagina-produtos/pagina-produtos.model';
 import { Router } from '@angular/router';
@@ -21,6 +21,10 @@ export class ProdutosService {
 
   public getCategorias(){
     return this.http.get<any>(`${this.BASE_URL}/categorias`,{ headers: this.HTTP_HEADER_NO_AUTH })
+  }
+
+  public postBuscarProdutos(){
+    return this.http.post<ProdutosModel[]>(`${this.BASE_URL}/produtos/buscarHeader`,{"termo": "cab"},{ headers: this.HTTP_HEADER_NO_AUTH })
   }
 
   public setFiltros(inputFiltros: number[]){

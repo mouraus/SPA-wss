@@ -17,6 +17,7 @@ export class PaginaProdutosComponent implements OnInit {
   public indiceSelecao: number = 0;
   public paginaCarregada: string = 'carregando';
   private selecaoFiltroCategoria: number[] | undefined;
+  private parametroBuscar?: string;
   
   constructor(
     private produtosService:ProdutosService,
@@ -25,7 +26,11 @@ export class PaginaProdutosComponent implements OnInit {
   ) 
   {
     this.activatedRoute.queryParams.subscribe(params => {
+      console.log(params)
       this.selecaoFiltroCategoria = params['categorias']?.split(',');
+      this.parametroBuscar= params['buscar']
+      console.log(this.parametroBuscar, typeof(this.parametroBuscar))
+
     });
   }
 
@@ -50,6 +55,14 @@ export class PaginaProdutosComponent implements OnInit {
       }
       this.produtos = produtosFiltrados;
     }
+
+    if(this.parametroBuscar){
+      this.produtosService.postBuscarProdutos().subscribe(
+        (data: ProdutosModel[]) => console.log(data)
+      )
+    }
+
+
 
     for(let i = 0 ; i < this.produtos.length; i += this.produtosPorPagina){
       this.produtosSelecao.push(this.produtos.slice(i, i + this.produtosPorPagina))
