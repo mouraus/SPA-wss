@@ -9,7 +9,7 @@ import { ProdutosModel } from './pagina-produtos.model';
   styleUrls: ['./pagina-produtos.component.scss']
 })
 
-export class PaginaProdutosComponent implements OnInit {
+export class PaginaProdutosComponent implements OnInit{
   public produtos: ProdutosModel[] = [];
   public produtosSelecao: any[][] = [];
   public produtosDisplay: any = [];
@@ -24,46 +24,21 @@ export class PaginaProdutosComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) 
-  {
-    this.activatedRoute.queryParams.subscribe(params => {
-      console.log(params)
-      this.selecaoFiltroCategoria = params['categorias']?.split(',');
-      this.parametroBuscar= params['buscar']
-      console.log(this.parametroBuscar, typeof(this.parametroBuscar))
-
-    });
-  }
+  {}
 
   ngOnInit(): void {
-   
-    this.produtosService.getProdutos().subscribe(
-      (data: ProdutosModel[]) => {
-        this.produtos = data;
-        this.organizarProdutos()
+    this.produtosService.getListaProdutosFiltrados();
+    this.produtosService.attFiltros.subscribe(
+      (att) => {
+        this.produtos = att
+        this.organizarProdutos();
       }
     )
   }
 
   public organizarProdutos(): void{
-    if(this.selecaoFiltroCategoria){
-      var produtosFiltrados: ProdutosModel[] = [];
-      for(let i=0; i<this.selecaoFiltroCategoria.length; i++){
-        this.selecaoFiltroCategoria[i] = Number(this.selecaoFiltroCategoria[i])
-      }
-      for(let produto of this.produtos){
-        this.selecaoFiltroCategoria.includes(produto.id_categoria) ? produtosFiltrados.push(produto) : '';
-      }
-      this.produtos = produtosFiltrados;
-    }
-
-    if(this.parametroBuscar){
-      this.produtosService.postBuscarProdutos().subscribe(
-        (data: ProdutosModel[]) => console.log(data)
-      )
-    }
-
-
-
+    this.paginaCarregada = 'carregando';
+    this.produtosSelecao = []
     for(let i = 0 ; i < this.produtos.length; i += this.produtosPorPagina){
       this.produtosSelecao.push(this.produtos.slice(i, i + this.produtosPorPagina))
     }

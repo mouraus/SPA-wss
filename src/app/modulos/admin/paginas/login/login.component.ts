@@ -14,11 +14,9 @@ export class LoginComponent implements OnInit {
   public senha: string = ""
   public erro: any = {mensagem:"", deuErro:false}
 
-  login(email: any, senha: any): void {
-    console.log({ email: email, senha: senha });
-    
+  login(email: any, senha: any): void {    
     this.auth.login(email, senha , this.erro)
-      }
+  }
     
   ngOnInit(): void {
   }

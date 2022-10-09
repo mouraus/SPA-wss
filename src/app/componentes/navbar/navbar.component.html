@@ -21,8 +21,8 @@
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Procure seu produto..." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Procurar</button>
+                <input class="form-control me-2" type="search" placeholder="Procure seu produto..." aria-label="Search" [(ngModel)]="parametroBusca" name="parametroBusca" #ctrl="ngModel">
+                <button class="btn btn-outline-danger"  (click)="buscarProdutos()">Pesquisar</button>
             </form>
         </div>
     </div>

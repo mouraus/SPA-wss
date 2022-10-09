@@ -27,10 +27,11 @@ export class PaginaInicialComponent implements OnInit {
       descricao: 'A FC Fontes foi constituída para buscar e oferecer soluções para o dia-a-dia do instalador, como fonte de alimentação, balun de vídeo, conectores, cabos HDMI, caixas organizadoras e de proteção, e Nobreaks - fundamentais nos projetos de Segurança Eletrônica.'
     },
     {
-      img: '../../../assets/patrocinadores/giga_logo_header.png',
+      img: '../../../assets/patrocinadores/logo_megatron.png',
       descricao: 'Totalmente consolidada no segmento e com foco absoluto, é referência nacional  no mercado de Fios e Cabos Especiais.'
     },
   ]
+ 
   public patrocinadores: Array<string> = ['../../../assets/patrocinadores/fc-patrocinador.jpeg', '../../../assets/patrocinadores/giga_logo_header.png', '../../../assets/patrocinadores/logo_megatron.png', '../../../assets/patrocinadores/patrocinador-AGL-logo.webp']
   public categorias: Array<{ titulo: string, img: string }> = [
     {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProdutosService } from 'src/app/servicos/produtos.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private produtosService:ProdutosService) { }
 
   ngOnInit(): void {
   }
 
+  public parametroBusca: string = '';
+
+  public buscarProdutos(): void{
+    this.produtosService.setParametroBusca(this.parametroBusca)
+    this.router.navigateByUrl(`/produtos`)
+  }
 }

@@ -29,7 +29,7 @@ export class MenuFiltroProdutosComponent implements OnInit {
         this.categoriasLista = data
       }
     )
-    this.getFiltroUrl();
+    this.getCategoriasSelecionadas();
   }
 
   setFiltros() {
@@ -47,17 +47,7 @@ export class MenuFiltroProdutosComponent implements OnInit {
     }
  }
 
- getFiltroUrl(){
-  this.activatedRoute.queryParams.subscribe(params => {
-    this.selecaoFiltroCategoria = params['categorias']?.split(',');
-    if(params['categorias'] != undefined){
-      for(let i=0; i<this.selecaoFiltroCategoria.length; i++){
-        this.selecaoFiltroCategoria[i] = Number(this.selecaoFiltroCategoria[i])
-      }
-      this.filtrosSelecionados = this.selecaoFiltroCategoria
-    }
-  })
-  
-  
+ getCategoriasSelecionadas(){
+  this.selecaoFiltroCategoria = this.produtosService.getCategoriasSelecionadas();
  }
 }
