@@ -3,86 +3,79 @@
         <h2 *ngIf="!errorMensagem.deuErro" class="mt-5">Cadastro de Produtos</h2>
         <div *ngIf="errorMensagem.deuErro" class="alert alert-danger mt-5" role="alert">
             {{errorMensagem.mensagem}}
-          </div>
+        </div>
+        <div *ngIf="errorMensagem.deuBom" class="alert alert-success" role="alert">
+            {{errorMensagem.mensagem}}
+        </div>
         <div class="item d-flex">
             <div class="inputArea d-flex flex-column align-items-start">
-                <label>Nome Do Produto</label>
-                <input name="nome_produto" [(ngModel)]="nome_produto" class="form-control" type="text"  required placeholder="Nome Do Produto">
+                <label>Nome Do Produto :</label>
+                <input name="nome_produto" [(ngModel)]="nome_produto" class="form-control" type="text" required
+                    placeholder="Nome Do Produto">
             </div>
             <div class="inputArea d-flex flex-column align-items-start">
-                <label>Imagem</label>
-                <input (change)="fileChangeEvent($event)" class="form-control" name="urlimagem" type="file" required placeholder="Nome Da Imagem">
-            </div>
-        </div>
-        <div class="item d-flex flex-row">
-            <div class="inputArea d-flex flex-column align-items-start">
-                <label>Categoria</label>
-                <div class="select d-flex flex-column">
-                    <select name="categoria" [(ngModel)]="categoria" type="number"  required placeholder="Categoria" required>
-                        <option *ngFor="let c of categoriasSelect"  required value={{c.id}}>{{c.nome_categoria}}</option>
-                    </select>
-                    <div class="d-flex flex-row">
-                        <input name="nome_categoria" [(ngModel)]="novaCategoria" type="text "
-                            placeholder="Adicione uma nova categoria..." class="form-control"  required>
-                        <button (click)="cadastrarCategoria(novaCategoria); iniciaSelect()" type="button"
-                            class="btn btn-outline-primary d-block">Adicionar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="inputArea d-flex flex-column align-items-start">
-                <label>SubCategoria</label>
-                <div class="select d-flex flex-column">
-                    <select name="subcategoria" [(ngModel)]="subcategoria" type="number" placeholder="SubCategoria">
-                        <option *ngFor="let s of subCategoriasSelect"  required value={{s.id}}>{{s.nome_subcategoria}}</option>
-                    </select>
-                    <div class="d-flex flex-row">
-                        <input class="form-control" [(ngModel)]="novaSubCategoria" name="nome_subcategoria"  required type="text"
-                            placeholder="Adicione uma nova categoria...">
-                        <button (click)="cadastrarSubCategoria(novaSubCategoria); iniciaSelect()" type="button"
-                            class="btn btn-outline-primary d-block">Adicionar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="item d-flex flex-row">
-            <div class="inputArea d-flex flex-column align-items-start">
-                <label>Codigo do Produto</label>
-                <input name="first" class="form-control" [(ngModel)]="codigo_produto" type="text"  required placeholder="Codigo do Produto">
-            </div>
-            <div class="inputArea d-flex flex-column align-items-start">
-                <label>Destaque</label>
-                <input class="form-control" name="destaque"  min="0" max="10" [(ngModel)]="destaque" type="number"  required placeholder="Destaque">
+                <label>Imagem :</label>
+                <input (change)="fileChangeEvent($event)" class="form-control" name="urlimagem" type="file" required
+                    placeholder="Nome Da Imagem">
             </div>
         </div>
         <div class="item d-flex flex-row justify-content-around">
 
             <div class="inputArea disponibilidade d-flex align-items-start flex-column w-100">
                 <label>Disponibilidade :</label>
-                <select name="disponibilidade" class="w-100" [(ngModel)]="disponibilidade">
+                <select name="disponibilidade" class=" form-control w-100" [(ngModel)]="disponibilidade">
                     <option value="false">Selecione</option>
                     <option value="true">Sim</option>
                     <option value="false">Não</option>
                 </select>
             </div>
-            <div class="inputArea d-flex flex-column align-items-start">
-                <label>Marca</label>
-                <input class="form-control" name="marca" [(ngModel)]="marca" type="text" placeholder="Nome Da Marca" required>
+        </div>
+        <div class="d-flex" style="gap:20px;">
+            <div class="inputArea d-flex flex-column align-items-start w-100">
+                <label>Categoria :</label>
+                <div class="select d-flex flex-column w-100">
+                    <select name="categoria" [(ngModel)]="categoria" type="number" class="form-control w-100" required
+                        placeholder="Categoria" required>
+                        <option selected value={{0}}>Selecione</option>
+                        <option *ngFor="let c of categoriasSelect" required value={{c.id}}>{{c.nome_categoria}}</option>
+                    </select>
+                    <div class="d-flex flex-row">
+                        <input name="nome_categoria" [(ngModel)]="novaCategoria" type="text "
+                            placeholder="Adicione uma nova categoria..." class="form-control" required>
+                        <button (click)="cadastrarCategoria(novaCategoria); iniciaSelect()" type="button"
+                            class="btn btn-outline-primary d-block">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngIf="isImageSaved;">
+                <img [src]="cardImageBase64" style="width:50%;" />
+            </ng-container>
+        </div>
+
+        <div class="item d-flex flex-row w-100">
+            <div class="inputArea d-flex flex-column align-items-start w-50">
+                <label>Codigo do Produto :</label>
+                <input name="first" class="form-control" [(ngModel)]="codigo_produto" type="text" required
+                    placeholder="Codigo do Produto">
+            </div>
+            <div class="inputArea d-flex flex-column align-items-start w-50">
+                <label>Destaque :</label>
+                <input class="form-control" name="destaque" min="0" max="10" [(ngModel)]="destaque" type="number"
+                    required placeholder="Destaque">
             </div>
         </div>
+      
         <div class="descricao d-flex flex-column align-items-start">
-            <label>Descricao</label>
-            <textarea class="form-control" name="descricao" [(ngModel)]="descricao" placeholder="Descricao do produto" ></textarea>
-          </div>
+            <label>Descricao :</label>
+            <textarea class="form-control" name="descricao" [(ngModel)]="descricao"
+                placeholder="Descricao do produto"></textarea>
+        </div>
         <button
-            (click)="cadastrarProduto(nome_produto,destaque,categoria,subcategoria,disponibilidade,codigo_produto,marca,descricao)"
-            class="btn btn-primary w-50 mx-auto"
-            >Cadastrar Produto</button>
-            <a routerLink="/admin/produtos" class="btn btn-warning align-items-start">Voltar</a>
-        </form>
+            (click)="categoria !=0 ? cadastrarProduto(nome_produto,destaque,categoria,subcategoria,disponibilidade,codigo_produto,marca,descricao):null"
+            class="btn btn-primary w-50 mx-auto">Cadastrar Produto</button>
+        <a routerLink="/admin/produtos" class="btn btn-warning align-items-start">Voltar</a>
+    </form>
 
-    
-    <ng-container *ngIf="isImageSaved;">
-        <img [src]="cardImageBase64" />
-    </ng-container>
+
+
 </div>

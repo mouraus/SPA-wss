@@ -34,15 +34,13 @@ export class CadastroProdutosService {
     if (this.id_imagem !== null) {
       formularioCadastroProdutos.id_imagem = this.id_imagem
     }
-    console.log(formularioCadastroProdutos);
     this.http.post(this.api.URL_PRODUTOS, formularioCadastroProdutos, { headers: this.httpHeaders, observe: 'response' })
       .subscribe(
-        (data) => {
-          errorMensagem.mensagem = data.body
-          errorMensagem.deuErro = true
-
+        () => {
+          errorMensagem.mensagem = "Produto cadastrado com sucesso!"
+          errorMensagem.deuBom = true
           setTimeout(() => {
-            errorMensagem.deuErro = false
+            errorMensagem.deuBom = false
           }, 5000)
 
 
@@ -53,7 +51,7 @@ export class CadastroProdutosService {
             || error.error == "id_subcategoria deve ser um número positivo" || error.error == "id_categoria deve ser um número positivo"
             || error.error == "nome_produto é um campo obrigatório" || error.error == "Produto já cadastrado"
           ) {
-            errorMensagem.mensagem = error.error
+            errorMensagem.mensagem = "Nao foi possivel cadastrar o produto!"
             errorMensagem.deuErro = true
 
             setTimeout(() => {

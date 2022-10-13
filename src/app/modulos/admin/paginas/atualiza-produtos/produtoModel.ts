@@ -6,7 +6,7 @@ constructor(
     public nome_subcategoria: number,
     public disponibilidade: boolean,
     public codigo_produto: string,
-    public id_marca: string,
+    public id_marca: number,
     public descricao: string,
     public destaque: number
 ){}

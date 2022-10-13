@@ -2,7 +2,7 @@ export interface FormularioCadastroProdutos {
     nome_produto:string,
     disponibilidade:boolean,
     codigo_produto:string,
-    id_marca:string,
+    id_marca:number,
     descricao:string,
     id_categoria:number,
     id_subcategoria:number,

@@ -33,7 +33,7 @@ export class AtualizaProdutosComponent implements OnInit {
     nome_subcategoria: 0,
     disponibilidade: false,
     codigo_produto: "",
-    id_marca: "",
+    id_marca: 1,
     descricao: "",
     destaque: 0
   };

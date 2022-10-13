@@ -19,10 +19,6 @@
                         <input class="form-control" name="codigo_produto" value="{{produto.codigo_produto}}" ngModel #codigo_produto="ngModel" type="text">
                     </div>
                     <div class="input d-flex align-items-start flex-column w-100">
-                        <label>Marca :</label>
-                        <input class="form-control" name="marca" value="{{produto.id_marca}}" ngModel #marca="ngModel" type="text">
-                    </div>
-                    <div class="input d-flex align-items-start flex-column w-100">
                         <label>Destaque :</label>
                         <input class="form-control" name="destaque" ngModel #destaque="ngModel" min="0" max="10" value="{{produto.destaque}}" type="number">
                     </div>
@@ -39,12 +35,6 @@
                         <select name="categoira"  ngModel #categoria="ngModel" class="form-control">
                             <option selected>{{produto.nome_categoria}}</option>
                             <option *ngFor="let c of categoriasSelect" value="{{c.id}}">{{c.nome_categoria}}</option>
-                        </select>
-                    </div>
-                    <div class="input d-flex flex-column">
-                        <label>SubCategoria :</label>
-                        <select name="subcategoria"  ngModel #subcategoria="ngModel" class="form-control">
-                            <option *ngFor="let s of subCategoriasSelect" value="{{s.id}}">{{s.nome_subcategoria}}</option>
                         </select>
                     </div>
                     <div class="input d-flex flex-column w-100">
