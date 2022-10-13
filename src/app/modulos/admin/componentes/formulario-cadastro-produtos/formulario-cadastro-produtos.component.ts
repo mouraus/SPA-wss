@@ -62,7 +62,7 @@ export class FormularioCadastroProdutosComponent implements OnInit {
         formularioCadastroProdutos.id_marca = marca,
         formularioCadastroProdutos.destaque = destaque,
         formularioCadastroProdutos.id_imagem = id_imagem
-      formularioCadastroProdutos.id_categoria = categoria,
+        formularioCadastroProdutos.id_categoria = categoria,
         formularioCadastroProdutos.id_subcategoria = subcategoria
 
     }

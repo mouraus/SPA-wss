@@ -32,8 +32,8 @@
                     </div>
                     <div class="input d-flex flex-column">
                         <label>Categoria :</label>
-                        <select name="categoira"  ngModel #categoria="ngModel" class="form-control">
-                            <option selected>{{produto.nome_categoria}}</option>
+                        <select name="id_categoria"  ngModel #categoria="ngModel" class="form-control">
+                            <option selected value="{{produto.nome_categoria}}">{{produto.nome_categoria}}</option>
                             <option *ngFor="let c of categoriasSelect" value="{{c.id}}">{{c.nome_categoria}}</option>
                         </select>
                     </div>

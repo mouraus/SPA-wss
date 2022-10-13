@@ -107,16 +107,14 @@ export class CadastroProdutosService {
 
   }
 
-  public atualizarProduto(formulario: FormularioCadastroProdutos, id: number) {
+  public  atualizarProduto(formulario: FormularioCadastroProdutos, id: number): any {
+   this.http.put(`${this.api.URL_PRODUTOS}/` + id, formulario, { headers: this.httpHeaders, observe: 'response' }).subscribe(data => {
+    if(data.ok){
+      this.http.get(`${this.api.URL_PRODUTOS}`).subscribe(data => {
+          localStorage.setItem("produtos", JSON.stringify(data))
+      })
+    }
+  })
 
-    this.http.put(`${this.api.URL_PRODUTOS}/` + id, formulario, { headers: this.httpHeaders, observe: 'response' }).subscribe(data => {
-      console.log(data);
-      if (data.ok) {
-        this.http.get(`${this.api.URL_PRODUTOS}`).subscribe(data => {
-          window.location.reload();
-
-        })
-      }
-    })
   }
 }
