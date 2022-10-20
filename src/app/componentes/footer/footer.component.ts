@@ -10,7 +10,7 @@ import { ProdutosService } from 'src/app/servicos/produtos.service';
 export class FooterComponent implements OnInit {
   public categoriasLista: {id: number, nome_categoria: string}[] = [];
   public redesSociais: Array<{img:string, url:string}> = [
-    {img:'../../../assets/icones/instagram.svg', url:'https://instagram.com/wssdistribuidora?igshid=YmMyMTA2M2Y='},
+    {img:'../../../assets/icones/instagram.svg', url:'https://instagram.com/wssdistribuidora'},
     {img:'../../../assets/icones/whatsapp.svg', url:'http://api.whatsapp.com/send?1=pt_BR&phone=553184848326'}
   ]
 
