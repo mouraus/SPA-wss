@@ -12,16 +12,13 @@ import { ProdutosModel } from './pagina-produtos.model';
 export class PaginaProdutosComponent implements OnInit{
   public produtos: ProdutosModel[] = [];
   public produtosSelecao: any[][] = [];
-  public produtosDisplay: any = [];
+  public produtosDisplay: ProdutosModel[] = [];
   public produtosPorPagina: number = 12
   public indiceSelecao: number = 0;
   public paginaCarregada: string = 'carregando';
-  private selecaoFiltroCategoria: number[] | undefined;
-  private parametroBuscar?: string;
   
   constructor(
     private produtosService:ProdutosService,
-    private activatedRoute: ActivatedRoute,
     private router: Router
   ) 
   {}
@@ -42,27 +39,39 @@ export class PaginaProdutosComponent implements OnInit{
     for(let i = 0 ; i < this.produtos.length; i += this.produtosPorPagina){
       this.produtosSelecao.push(this.produtos.slice(i, i + this.produtosPorPagina))
     }
-    this.produtosDisplay = this.produtosSelecao[this.indiceSelecao];
+    this.produtosDisplay =  this.eliminaProdutosDuplicados(this.produtosSelecao[this.indiceSelecao]);
     this.produtosDisplay?.length != undefined ? this.paginaCarregada = 'carregada' : this.paginaCarregada = 'semProdutos';
   }
 
   public proximaSelecao(): void{
     this.indiceSelecao++;
-    this.produtosDisplay = this.produtosSelecao[this.indiceSelecao];
+    this.produtosDisplay = this.eliminaProdutosDuplicados(this.produtosSelecao[this.indiceSelecao]);
   }
 
   public voltarSelecao(): void{
     this.indiceSelecao--;
-    this.produtosDisplay = this.produtosSelecao[this.indiceSelecao];
+    this.produtosDisplay =  this.eliminaProdutosDuplicados(this.produtosSelecao[this.indiceSelecao]);
   }
 
   public selecionarSelecao(indice: number): void{
     this.indiceSelecao = indice;
-    this.produtosDisplay = this.produtosSelecao[this.indiceSelecao];
+    this.produtosDisplay =  this.eliminaProdutosDuplicados(this.produtosSelecao[this.indiceSelecao]);
   }
 
   public linkPaginaProduto(produtoId: number){
     this.router.navigateByUrl("produto?id=" + produtoId);
+  }
+
+  private eliminaProdutosDuplicados(inputLista: ProdutosModel[]): ProdutosModel[]{
+    return inputLista.reduce((acc: ProdutosModel[], current: ProdutosModel) => {
+      var x:any = acc.find(item => item.id === current.id);
+      if(!x) {
+        return acc.concat([current]);
+      } 
+      else {
+        return acc;
+      }
+    },[]);
   }
 
 }

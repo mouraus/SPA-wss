@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import {Location} from '@angular/common';
 import { ProdutosService } from 'src/app/servicos/produtos.service';
 import { ProdutosModel } from '../pagina-produtos/pagina-produtos.model';
 
@@ -13,6 +14,7 @@ export class PaginaProdutoComponent implements OnInit {
   constructor(
     private produtosService:ProdutosService,
     private activatedRoute: ActivatedRoute,
+    private location: Location
   ) { }
 
   public idProduto?: Params;
@@ -33,5 +35,9 @@ export class PaginaProdutoComponent implements OnInit {
         console.log(data)
       }
     )
+  }
+
+  public voltarNavegacao(): void{
+    this.location.back()
   }
 }

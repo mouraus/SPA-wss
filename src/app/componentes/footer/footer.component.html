@@ -1,26 +1,20 @@
 <footer class="container-fluid ">
-    <div class="logo">
+    <div class="logo" routerLink="/">
         <img src="../../../assets/logo-wss.svg" alt="logo">
     </div>
 
     <div class="produtos">
         <h3>Produtos</h3>
-        <a href="#produto">Produto</a>
-        <a href="#produto">Produto</a>
-        <a href="#produto">Produto</a>
-        <a href="#produto">Produto</a>
-        <a href="#produto">Produto</a>
-
+        <span *ngFor="let categoria of categoriasLista" (click)="redirecionarCategoria(categoria.id)">{{categoria.nome_categoria}}</span>
     </div>
 
     <div class="contato">
         <h3>Contato</h3>
-        <p class="endereco">Av altamiro avelino soares 245, castelo - Belo Horizonte, MG.<br>Cep 31330-000
-        </p>
+        <p class="endereco">Av Altamiro Avelino Soares 245, Castelo <br> Belo Horizonte, MG.<br>Cep 31330-000</p>
         <p class="telefone">(31) 98484-8326</p>
         <!-- <b>Email: lorem@ipsum.com.br</b> -->
         <div class="redes__sociais">
-            <a *ngFor="let redeSocial of redesSociais" href="#redeSocial">
+            <a *ngFor="let redeSocial of redesSociais" href="{{redeSocial.url}}" target="_blank">
                 <img src={{redeSocial.img}} alt="rede social">
             </a>
         </div>

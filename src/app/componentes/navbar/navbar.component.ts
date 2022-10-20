@@ -22,4 +22,9 @@ export class NavbarComponent implements OnInit {
     this.produtosService.setParametroBusca(this.parametroBusca)
     this.router.navigateByUrl(`/produtos`)
   }
+
+  public navegarPaginaProdutos(){
+    this.produtosService.setFiltros([]);
+    window.location.href = `/produtos`;
+  }
 }

@@ -34,8 +34,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        // border: 3px solid black;
-
+       
         .categoria {
             width: 49%;
             height: 345px;
@@ -48,8 +47,6 @@
             background-position: bottom !important;
             background-size: contain !important;
             cursor: pointer;
-
-
 
             h6 {
                 font-family: 'Poppins';

@@ -15,10 +15,7 @@ export class MenuFiltroProdutosComponent implements OnInit {
   public selecaoFiltroCategoria: number[] = [];
   public filtrosSelecionados: number[]  = []
 
-  constructor(
-    private produtosService:ProdutosService,
-    private activatedRoute: ActivatedRoute,
-  ) {
+  constructor(private produtosService:ProdutosService) {
    }
 
 

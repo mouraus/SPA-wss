@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
-<a routerLink=""><button class="btn btn-primary btn-danger">Voltar</button></a>
-<div class="container-fluid produto mt-5">
+<app-botao-whatsapp></app-botao-whatsapp>
+<button (click)="voltarNavegacao()" class="btn btn-primary btn-danger" >Voltar</button>
+<div  class="container-fluid produto mt-5">
 	<div class="descricao">
 		<h2>{{produto?.nome_produto}}</h2>
 		<p>{{produto?.descricao}}</p>
@@ -9,7 +10,7 @@
 			<img [src]="produto?.urlimagem" alt="produto" class="img-fluid">
 	</div>
 </div>
-<a href="http://api.whatsapp.com/send?1=pt_BR&phone=5532985015459" target="_blank" class="w-25 mx-auto wpp d-flex flex-row align-items-center p-2 flex-nowrap">
+<a href="http://api.whatsapp.com/send?1=pt_BR&phone=553184848326" target="_blank" class="w-25 mx-auto wpp d-flex flex-row align-items-center p-2 flex-nowrap">
 	<img src="../../../assets/icones/whatsapp.svg">
 	<span>Solicitar orçamento</span>
 </a>

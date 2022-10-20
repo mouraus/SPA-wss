@@ -69,6 +69,7 @@ export class ProdutosService {
     }
     
     else if(this.categoriasSelecionadas.length > 0){
+      console.log(this.categoriasSelecionadas)
       this.filtroPorCategoria(this.categoriasSelecionadas).subscribe(
         (resBusca: any[]) => {
           console.log(resBusca)
@@ -110,6 +111,10 @@ export class ProdutosService {
 
   public getCategoriasSelecionadas(){
     return this.categoriasSelecionadas;
+  }
+
+  public setCategoriasSelecionadas(input: any){
+    this.categoriasSelecionadas = input;
   }
 
 }
