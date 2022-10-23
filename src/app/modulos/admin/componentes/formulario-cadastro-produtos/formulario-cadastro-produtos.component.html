@@ -15,12 +15,14 @@
             </div>
             <div class="inputArea d-flex flex-column align-items-start">
                 <label>Imagem :</label>
-                <input (change)="fileChangeEvent($event)" class="form-control" name="urlimagem" type="file" required
+                <input (change)="fileChangeEvent($event)"  accept="image/png, image/jpeg" class="form-control" name="urlimagem" type="file" required
                     placeholder="Nome Da Imagem">
             </div>
         </div>
-        <div class="item d-flex flex-row justify-content-around">
-
+        <div class="item d-flex flex-column justify-content-around">
+            <ng-container *ngIf="isImageSaved;">
+                <img [src]="cardImageBase64" style="width:30%;" />
+            </ng-container>
             <div class="inputArea disponibilidade d-flex align-items-start flex-column w-100">
                 <label>Disponibilidade :</label>
                 <select name="disponibilidade" class=" form-control w-100" [(ngModel)]="disponibilidade">
@@ -39,17 +41,9 @@
                         <option selected value={{0}}>Selecione</option>
                         <option *ngFor="let c of categoriasSelect" required value={{c.id}}>{{c.nome_categoria}}</option>
                     </select>
-                    <div class="d-flex flex-row">
-                        <input name="nome_categoria" [(ngModel)]="novaCategoria" type="text "
-                            placeholder="Adicione uma nova categoria..." class="form-control" required>
-                        <button (click)="cadastrarCategoria(novaCategoria); iniciaSelect()" type="button"
-                            class="btn btn-outline-primary d-block">Adicionar</button>
-                    </div>
                 </div>
             </div>
-            <ng-container *ngIf="isImageSaved;">
-                <img [src]="cardImageBase64" style="width:50%;" />
-            </ng-container>
+
         </div>
 
         <div class="item d-flex flex-row w-100">

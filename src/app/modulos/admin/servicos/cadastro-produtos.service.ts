@@ -68,53 +68,18 @@ export class CadastroProdutosService {
       )
   }
 
-  public cadastrarCategoria(categoria: any) {
-    this.http.post(this.api.URL_CATEGORIA, { nome_categoria: categoria }, { headers: this.httpHeaders, observe: 'response' })
-      .subscribe(
-        (error) => {
-          if (error.status === 400) {
-            localStorage.clear()
-            this.router.navigate(['/admin/login'])
-          }
-        }
-      )
-  }
-  public cadastrarSubCategoria(subcategoria: any) {
-    this.http.post(this.api.URL_SUBCATEGORIA, { nome_subcategoria: subcategoria }, { headers: this.httpHeaders, observe: 'response' })
-      .subscribe(
-        (error) => {
-          if (error.status === 400) {
-            localStorage.clear()
-            this.router.navigate(['/admin/login'])
-          }
-        }
-      )
-  }
 
   public deletarProduto(id: number, errorMensagem: any) {
-
     this.http.delete(`${this.api.URL_PRODUTOS}/` + id, { headers: this.httpHeaders, observe: 'response' }).subscribe(data => {
       errorMensagem.mensagem = data.body
       errorMensagem.deuErro = true
-
       setTimeout(() => {
         errorMensagem.deuErro = false
       }, 5000)
       window.location.reload();
 
     })
-
-
   }
 
-  public  atualizarProduto(formulario: FormularioCadastroProdutos, id: number): any {
-   this.http.put(`${this.api.URL_PRODUTOS}/` + id, formulario, { headers: this.httpHeaders, observe: 'response' }).subscribe(data => {
-    if(data.ok){
-      this.http.get(`${this.api.URL_PRODUTOS}`).subscribe(data => {
-          localStorage.setItem("produtos", JSON.stringify(data))
-      })
-    }
-  })
 
-  }
 }

@@ -68,15 +68,6 @@ export class FormularioCadastroProdutosComponent implements OnInit {
     }
   }
 
-  public cadastrarCategoria(novaCategoria: string) {
-    this.apiCadastro.cadastrarCategoria(novaCategoria)
-    this.iniciaSelect()
-  }
-  public cadastrarSubCategoria(novaSubCategoria: string) {
-    this.apiCadastro.cadastrarSubCategoria(novaSubCategoria)
-    this.iniciaSelect()
-  }
-
   public cadastrarImagem(base64: any, nome_imagem: string) {
     this.apiCadastro.cadastrarImagem(base64, nome_imagem)
   }
