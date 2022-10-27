@@ -72,10 +72,7 @@ export class FormularioCadastroProdutosComponent implements OnInit {
     this.apiCadastro.cadastrarImagem(base64, nome_imagem)
   }
   private cortaBase64(base64: string, nome_imagem: string) {
-    this.imagem = base64.replace("data:image/png;base64,", "")
-    this.cadastrarImagem(this.imagem, nome_imagem)
-    console.log(base64);
-
+    this.cadastrarImagem(base64, nome_imagem)
   }
 
   public cadastrarProduto(nome_produto: string, destaque: number, categoria: any, subcategoria: any, disponibilidade: boolean, codigo_produto: string, marca: number, descricao: string) {
