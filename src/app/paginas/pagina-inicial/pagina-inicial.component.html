@@ -3,6 +3,20 @@
 <app-botao-whatsapp></app-botao-whatsapp>
 
 
+<div class="container-fluid d-flex flex-column mt-5 my-4">
+  <h2 class="mx-auto mt-5">Parceiros</h2>
+  <div class="d-flex patrocinadores my-5">
+    <div *ngFor="let parceiro of parceiros" class="item">
+      <img src={{parceiro.img}} class="mx-auto" alt="logo parceiro">
+     <div style="gap:45px" class="d-flex flex-column">
+      <h2 class="mx-auto">{{parceiro.nome}}</h2>
+      <p>{{parceiro.descricao}}</p>
+     </div>
+    </div>
+  </div>
+  <a routerLink="/parceiros" class="mx-auto"><button class="btn btn-outline-danger btn-lg px-5">Saiba Mais</button></a>
+
+</div>
 
 <div class="my-5 container-fluid categorias">
   <div class="categoria" *ngFor="let categoria of categorias"
@@ -12,11 +26,11 @@
 
 </div>
 
-<section class="text-center" *ngIf="destaqueProdutos">
+<section *ngIf="destaqueProdutos.length > 0" class="text-center">
   <h2>Destaques</h2>
   <div class="card-area">
     <div *ngFor="let produto of destaqueProdutos; index as i" class="card-p  w-25 py-2 px-1">
-      <img [src]="produto.urlimagem" class="card-img-top" alt="Imagem do produto">
+      <img [src]="produto.urlimagem" class="mx-auto card-img-top" alt="Imagem do produto">
       <div class="card-body">
         <h2>{{produto.nome_produto}}</h2>
         <p class="card-text">{{produto.descricao}}</p>
@@ -27,15 +41,4 @@
 
 </section>
 
-<div class="container-fluid d-flex flex-column mt-5 my-4">
-  <h2 class="mx-auto mt-5">Parceiros</h2>
-  <div class="d-flex patrocinadores my-5">
-    <div *ngFor="let parceiro of parceiros" class="item">
-      <img src={{parceiro.img}} alt="">
-      <p>{{parceiro.descricao}}</p>
-    </div>
-  </div>
-  <a routerLink="/parceiros" class="mx-auto"><button class="btn btn-outline-danger btn-lg px-5">Saiba Mais</button></a>
-
-</div>
 <app-footer></app-footer>

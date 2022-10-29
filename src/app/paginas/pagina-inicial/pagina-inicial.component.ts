@@ -13,21 +13,26 @@ export class PaginaInicialComponent implements OnInit {
   public destaqueProdutos: ProdutosModel[] = [];
 
 
-  public parceiros: {img:string, descricao: string}[] =[
+  public parceiros: {img:string,nome:string, descricao: string}[] =[
     {
       img: '../../../assets/patrocinadores/fc-patrocinador.jpeg',
+      nome:"Fc Fontes",
       descricao: 'A FC Fontes foi constituída para buscar e oferecer soluções para o dia-a-dia do instalador, como fonte de alimentação, balun de vídeo, conectores, cabos HDMI, caixas organizadoras e de proteção, e Nobreaks - fundamentais nos projetos de Segurança Eletrônica.'
     },
     {
       img: '../../../assets/patrocinadores/patrocinador-AGL-logo.webp',
+      nome:"AGL Soluções em Segurança Eletrônica",
+      
       descricao: 'Fundada há 37 anos, a AGL sempre buscou a excelência em seus negócios, sendo referência de idoneidade, qualidade de produtos, compromisso com os clientes e parceiros.'
     },
     {
       img: '../../../assets/patrocinadores/giga_logo_header.png',
+      nome:"Giga Multilaser",
       descricao: 'Criada há mais de 10 anos, a Giga Security, que em 2021 passou a se posicionar no mercado como Multilaser Giga, é considerada uma das principais marcas do mercado brasileiro no segmento de segurança eletrônica.'
     },
     {
       img: '../../../assets/patrocinadores/logo_megatron.png',
+      nome:"Megatron Fios e Cabos",
       descricao: 'Totalmente consolidada no segmento e com foco absoluto, é referência nacional  no mercado de Fios e Cabos Especiais.'
     }
   ]
