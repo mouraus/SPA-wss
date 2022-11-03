@@ -8,8 +8,8 @@
       <button type="button" class="btn btn-outline-primary btn-lg d-lg-none d-block" data-bs-toggle="modal"
         data-bs-target="#modalFiltraProdutos">Filtro</button>
       <div class="input-pesquisa d-flex">
-        <input class="form-control me-2" type="search" placeholder="Procure seu produto..." aria-label="Search">
-        <button class="btn btn-outline-success btn-lg" type="submit">Procurar</button>
+        <input class="form-control me-2" type="search" placeholder="Procure seu produto..." aria-label="Search"  [(ngModel)]="parametroBusca" name="parametroBusca" #ctrl="ngModel">
+        <button class="btn btn-outline-danger btn-lg" (click)="buscarProdutos()">Procurar</button>
       </div>
 
     </form>

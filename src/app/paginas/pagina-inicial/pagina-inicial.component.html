@@ -32,7 +32,7 @@
     <div *ngFor="let produto of destaqueProdutos; index as i" class="card-p  w-25 py-2 px-1">
       <img [src]="produto.urlimagem" class="mx-auto card-img-top" alt="Imagem do produto">
       <div class="card-body">
-        <h2>{{produto.nome_produto}}</h2>
+        <h2 (click)="linkPaginaProduto(produto.id)">{{produto.nome_produto}}</h2>
         <p class="card-text">{{produto.descricao}}</p>
       </div>
     </div>

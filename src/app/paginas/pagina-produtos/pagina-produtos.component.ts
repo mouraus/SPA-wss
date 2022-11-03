@@ -16,6 +16,7 @@ export class PaginaProdutosComponent implements OnInit{
   public produtosPorPagina: number = 12
   public indiceSelecao: number = 0;
   public paginaCarregada: string = 'carregando';
+  public parametroBusca: string = '';
   
   constructor(
     private produtosService:ProdutosService,
@@ -72,6 +73,12 @@ export class PaginaProdutosComponent implements OnInit{
         return acc;
       }
     },[]);
+  }
+
+
+  public buscarProdutos(): void{
+    this.produtosService.setParametroBusca(this.parametroBusca);
+    this.router.navigateByUrl(`/produtos`)
   }
 
 }

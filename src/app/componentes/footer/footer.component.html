@@ -3,8 +3,8 @@
         <img src="../../../assets/logo-wss.svg" alt="logo">
     </div>
 
-    <div class="produtos">
-        <h3>Produtos</h3>
+    <div class="produtos" *ngIf="carregado">
+        <h3>Categorias</h3>
         <span *ngFor="let categoria of categoriasLista" (click)="redirecionarCategoria(categoria.id)">{{categoria.nome_categoria}}</span>
     </div>
 

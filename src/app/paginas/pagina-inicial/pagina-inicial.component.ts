@@ -63,7 +63,7 @@ export class PaginaInicialComponent implements OnInit {
   ngOnInit(): void {
     this.produtosService.getProdutos().subscribe(
       (data: ProdutosModel[]) => {
-        this.destaqueProdutos = data.slice(0, 8);
+        this.destaqueProdutos = data.slice(0, 6);
       }
     )
 
