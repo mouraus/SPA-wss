@@ -7,11 +7,9 @@ import { ContatoModel } from '../paginas/contato/contato.model';
 })
 export class EmailService {
   private storage: any = localStorage.getItem('jwt')
-  private jwt: any = JSON.parse(this.storage)
   private httpHeaders = new HttpHeaders(
     {
       'content-type': 'application/json',
-      'Authorization': "Bearer " + this.jwt.token
     }
   )
   private BASE_URL :string = "https://wss-dev.herokuapp.com";
