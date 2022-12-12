@@ -10,7 +10,9 @@ export class ProdutosService {
 
   private BASE_URL :string = "https://wss-dev.herokuapp.com";
 
- 
+  private HTTP_HEADER_NO_AUTH: HttpHeaders = new HttpHeaders({
+    'content-type':'application/json'
+  })
 
   attFiltros: Subject<any> = new Subject<any>();
 
@@ -22,17 +24,17 @@ export class ProdutosService {
   constructor(private http :HttpClient, private router: Router) { }
 
   public getProdutos(){
-    return this.http.get<ProdutosModel[]>(`${this.BASE_URL}/produtos`)
+    return this.http.get<ProdutosModel[]>(`${this.BASE_URL}/produtos`,{ headers: this.HTTP_HEADER_NO_AUTH })
   }
 
   public getCategorias(){
-    return this.http.get<any>(`${this.BASE_URL}/categorias`)
+    return this.http.get<any>(`${this.BASE_URL}/categorias`,{ headers: this.HTTP_HEADER_NO_AUTH })
   }
 
   public postBuscarProdutos(parametroBusca: string){
     var jsonData: {termo: string} = {termo: parametroBusca};
 
-    return this.http.post<ProdutosModel[]>(`${this.BASE_URL}/produtos/buscarHeader`,JSON.stringify(jsonData))
+    return this.http.post<ProdutosModel[]>(`${this.BASE_URL}/produtos/buscarHeader`,JSON.stringify(jsonData),{ headers: this.HTTP_HEADER_NO_AUTH })
   }
 
   private filtroPorCategoria(inputCategorias: any[]){
@@ -40,7 +42,7 @@ export class ProdutosService {
     for (let item of inputCategorias){
       filtroUrl.push(`id_categoria=${item}`);
     }
-    return this.http.get<any>(`${this.BASE_URL}/produtos/filtrar?${filtroUrl.join('&')}`)
+    return this.http.get<any>(`${this.BASE_URL}/produtos/filtrar?${filtroUrl.join('&')}`,{ headers: this.HTTP_HEADER_NO_AUTH })
   }
 
 
@@ -100,7 +102,7 @@ export class ProdutosService {
   }
 
   public getProdutoEspecifico(id: number){
-    return this.http.get<ProdutosModel>(`${this.BASE_URL}/produtos/detalhar/${id}`)
+    return this.http.get<ProdutosModel>(`${this.BASE_URL}/produtos/detalhar/${id}`,{ headers: this.HTTP_HEADER_NO_AUTH })
   }
 
   public getParametroBusca(){
