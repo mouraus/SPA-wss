@@ -4,9 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UrlBaseApiService {
-  public URL_SUBCATEGORIA :string = 'https://wss-dev.herokuapp.com/subcategorias'
-  public URL_CATEGORIA :string = 'https://wss-dev.herokuapp.com/categorias/'
-  public URL_PRODUTOS:string ='https://wss-dev.herokuapp.com/produtos'
-  public URL_UPLOAD: string = 'https://wss-dev.herokuapp.com/upload'
+  public URL_SUBCATEGORIA :string = 'https://api-prod-wss.herokuapp.com/subcategorias'
+  public URL_CATEGORIA :string = 'https://api-prod-wss.herokuapp.com/categorias/'
+  public URL_PRODUTOS:string ='https://api-prod-wss.herokuapp.com/produtos'
+  public URL_UPLOAD: string = 'https://api-prod-wss.herokuapp.com/upload'
   constructor() { }
 }

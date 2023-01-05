@@ -10,7 +10,7 @@ export class AuthService {
 
 
     login(email: string, senha: string, erro:any) {
-        return this.http.post<any>(`https://wss-dev.herokuapp.com/login`, { email, senha }).subscribe(
+        return this.http.post<any>(`https://api-prod-wss.herokuapp.com/login`, { email, senha }).subscribe(
             (data) => {
                 console.log(data);
                 localStorage.setItem("jwt", JSON.stringify(data))
