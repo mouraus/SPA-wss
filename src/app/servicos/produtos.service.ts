@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 })
 export class ProdutosService {
 
-  private BASE_URL :string = "https://api-prod-wss.herokuapp.com/";
+  private BASE_URL :string = "https://api-prod-wss.herokuapp.com";
 
   private HTTP_HEADER_NO_AUTH: HttpHeaders = new HttpHeaders({
     'content-type':'application/json'
