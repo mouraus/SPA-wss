@@ -71,9 +71,7 @@ export class ProdutosService {
     else if(this.categoriasSelecionadas.length > 0){
       console.log(this.categoriasSelecionadas)
       this.filtroPorCategoria(this.categoriasSelecionadas).subscribe(
-        (resBusca: any[]) => {
-          console.log(resBusca)
-  
+        (resBusca: any[]) => {  
          for(let produto of resBusca){
           this.produtosFiltrados.push(produto)
          }

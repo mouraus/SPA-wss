@@ -12,11 +12,12 @@ export class EmailService {
       'content-type': 'application/json',
     }
   )
-  private BASE_URL :string = "https://api-prod-wss.herokuapp.com/";
+  private BASE_URL :string = "https://api-prod-wss.herokuapp.com/usuario/envioEmail";
   constructor(private http :HttpClient, private router: Router) { }
 
-  public enviarEmail(email: ContatoModel){
-    return this.http.post<ContatoModel>(`${this.BASE_URL}`,email,{ headers: this.httpHeaders })
+  public enviarEmail(email: any){
+    return this.http.post<ContatoModel>(`${this.BASE_URL}`,email.value,{ headers: this.httpHeaders }).subscribe((data)=>{
+    })
   }
 
 
