@@ -12,7 +12,7 @@ export class EmailService {
       'content-type': 'application/json',
     }
   )
-  private BASE_URL :string = "https://api-prod-wss.herokuapp.com/usuario/envioEmail";
+  private BASE_URL :string = "https://api-prod-wss.herokuapp.com/contato";
   constructor(private http :HttpClient, private router: Router) { }
 
   public enviarEmail(email: any){
